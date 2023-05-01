@@ -13,9 +13,44 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', '\App\Http\Controllers\IndexController@index')->name('home');
+
+
+
+Route::get('/admin', '\App\Http\Controllers\Admin\IndexController@index')->name('admin');
+Route::get('/admin/img', '\App\Http\Controllers\Admin\IndexController@img')->name('admin.logo');
+Route::post('/admin/form', '\App\Http\Controllers\Admin\IndexController@form')->name('admin.form');
+
+
+
+
+//************************************************************
+// Admin panel
+//************************************************************
+Route::prefix('admin')->name('admin.')/*->middleware(['auth', 'admin'])*/->group(function (){
+    Route::resource('category', \App\Http\Controllers\Admin\CategoryController::class);
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Route::middleware([
     'auth:sanctum',
