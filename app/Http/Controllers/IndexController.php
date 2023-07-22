@@ -9,6 +9,7 @@ class IndexController extends Controller
 {
     public function index()
     {
+
         $config = Config::find(1);
         return view('__shop.layout', compact('config'));
     }

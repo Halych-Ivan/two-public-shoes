@@ -3,105 +3,106 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\CategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        return view('__admin.category.index');
+        $categories = Category::query()
+            ->orderBy('section')
+            ->orderBy('visibility', 'desc')
+            ->orderBy('title')
+            ->get();
+        return view('admin.categories.index', compact('categories'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+
+    public function create(Category $category)
     {
-        return view('__admin.category.create');
+        return view('admin.categories.create', compact('category'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        $request->validate([
-            'title' => '',
-            'section' => '',
-            'visibility' => '',
-            'banner_heading' => 'image|mimes:png,jpg,jpeg|max:2048',
-            'banner_shop' => 'image|mimes:png,jpg,jpeg|max:2048'
-        ]);
-//        dd($request);
 
-        $category = new Category();
-        $category->title = $request->title;
-        $category->section = $request->section;
-        $category->visibility = $request->visibility;
+    public function store(CategoryRequest $request, Category $category)
+    {
+        $data = $request->validated();
+
+        $category->title = $data['title'];
+        $category->section = $data['section'] ?? '0';
+        $category->visibility = $data['visibility'] ?? '0';
+
+        if(isset($data['banner_heading'])){ $category->banner_heading = $this->saveImg($data['banner_heading'], 'categories'); }
+        if(isset($data['banner_shop'])){ $category->banner_shop = $this->saveImg($data['banner_shop'], 'categories'); }
+
         $category->save();
 
-        if(isset($request->banner_heading)){
-            $file = $request->banner_heading;
-            $filename = Str::random(40) . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('images/categories'), $filename);
-            $category->banner_heading = $filename;
-            $category->save();
-        }
-
-        if(isset($request->banner_shop)){
-            $file = $request->banner_shop;
-            $filename = Str::random(40) . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('images/categories'), $filename);
-            $category->banner_shop = $filename;
-            $category->save();
-        }
-
-
-
-
-
-
-
-        //dd($category);
-
-
-        return view('__admin.category.index');
+        return redirect()->route('admin.categories.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
+
     public function show(Category $category)
     {
-        //
+        return view('admin.categories.create', compact('category'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+
     public function edit(Category $category)
     {
-        return view('__admin.category.edit');
+        return view('admin.categories.create', compact('category'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Category $category)
+
+    public function update(CategoryRequest $request, Category $category)
     {
-        //
+        $data = $request->validated();
+
+        if(isset($data['title']))      { $category->title = $data['title']; };
+        if(isset($data['section']))    { $category->section = $data['section']; };
+        if(isset($data['visibility'])) { $category->visibility = $data['visibility']; };
+
+        if(isset($data['banner_heading'])){
+            $category->banner_heading = $this->saveImg($data['banner_heading'], 'categories', $category->banner_heading);
+        }
+
+        if(isset($data['banner_shop'])){
+            $category->banner_shop = $this->saveImg($data['banner_shop'], 'categories', $category->banner_shop);
+        }
+
+        $category->save();
+
+        return redirect()->route('admin.categories.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy(Category $category)
     {
-        //
+        $this->deleteImg($category->banner_heading, 'categories');
+        $this->deleteImg($category->banner_shop, 'categories');
+        $category->delete();
+
+        return redirect()->route('admin.categories.index')->with('alert', 'Дія виконана успішно!');
+    }
+
+
+    private function saveImg($file, $folder, $fileDelete = false)
+    {
+        if($fileDelete){ $this->deleteImg($fileDelete, 'categories'); }
+
+        $filename = Str::random(40) . '.' . $file->getClientOriginalExtension();
+        $file->move(public_path('images/'.$folder), $filename);
+
+        return $filename;
+    }
+
+    private function deleteImg($file, $folder)
+    {
+        $fileForDelete = public_path('images/' . $folder . '/' . $file);
+        if (File::exists($fileForDelete)) { File::delete($fileForDelete); }
     }
 }

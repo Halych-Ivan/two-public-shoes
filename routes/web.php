@@ -28,7 +28,7 @@ Route::post('/admin/form', '\App\Http\Controllers\Admin\IndexController@form')->
 // Admin panel
 //************************************************************
 Route::prefix('admin')->name('admin.')/*->middleware(['auth', 'admin'])*/->group(function (){
-    Route::resource('category', \App\Http\Controllers\Admin\CategoryController::class);
+    Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);
 
 });
 

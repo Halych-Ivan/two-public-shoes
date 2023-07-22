@@ -15,13 +15,13 @@ class IndexController extends Controller
         //$q->save();
         $config = Config::find(1);
 
-        return view('__admin.main.index', compact('config'));
+        return view('admin.main.index', compact('config'));
     }
 
     public function img()
     {
 
-        return view('__admin.main.index');
+        return view('admin.main.index');
     }
 
     public function form(Request $request)

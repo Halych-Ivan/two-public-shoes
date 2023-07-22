@@ -1,26 +1,26 @@
-@extends('__admin.layout')
+@extends('admin.layout')
 @section('title', 'ADMIN')
 
 
 @section('content')
-{{--    {{dd($category)}}--}}
+{{--    {{dd($categories)}}--}}
     <div class="container">
 
-        <h1>Нова категорія</h1>
+        <h1>Редагування категорії</h1>
 
-        <form class="m-15" method="POST" action="{{route('admin.category.store')}}" enctype="multipart/form-data">
+        <form class="m-15" method="POST" action="{{route('admin.categories.store')}}" enctype="multipart/form-data">
             @csrf
 
             <div class="mb-3">
                 <label for="title" class="form-label">Назва</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="{{ old('title', 'Назва категорії') }}">
+                <input type="text" class="form-control" id="title" name="title" placeholder="{{ $category->title ?? old('title', 'Назва категорії') }}">
             </div>
 
             <div class="mb-3">
                 <select class="form-select" aria-label="section" name="section">
                     <option value="0" selected>не обрано</option>
-                    <option value="m">Чоловік</option>
-                    <option value="w">Жінка</option>
+                    <option value="m" @if(isset($category->section) && ($category->section == 'm')) selected @endif>Чоловік</option>
+                    <option value="w" @if(isset($category->section) && ($category->section == 'w')) selected @endif>Жінка</option>
                 </select>
             </div>
 
@@ -35,7 +35,8 @@
             </div>
 
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="1" id="visibility" name="visibility">
+                <input class="form-check-input" type="checkbox" value="1" id="visibility" name="visibility"
+                       @if(isset($category->visibility) && ($category->visibility)) checked @endif
                 <label class="form-check-label" for="visibility">Видимість</label>
             </div>
 

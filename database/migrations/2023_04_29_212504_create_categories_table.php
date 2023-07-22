@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('section')->default('0');
-            $table->boolean('visibility')->default(false);
+            $table->boolean('visibility')->default('0');
             $table->string('banner_shop')->nullable();
             $table->string('banner_heading')->nullable();
 
