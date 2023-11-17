@@ -7,6 +7,8 @@
     <div class="container">
 
         <h1>{{$category->exists ? 'Редагування категорії' : 'Нова категорія'}}</h1>
+        <x-admin.action-icons resource="categories" id="{{$category->id ?? ''}}"></x-admin.action-icons>
+        <hr>
 
         <form class="m-15"
               action="{{$category->exists ? route('admin.categories.update', $category->id) : route('admin.categories.store')}}"

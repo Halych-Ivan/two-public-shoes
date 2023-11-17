@@ -6,7 +6,8 @@
     <div class="container">
 
         <h1>Категорії</h1>
-        <x-admin.action-icons resource="categories" id=""></x-admin.action-icons>
+        <x-admin.action-icons resource="categories" id="{{$category->id ?? ''}}"></x-admin.action-icons>
+        <hr>
 
         <h2>Всі категорії</h2>
         <table class="">

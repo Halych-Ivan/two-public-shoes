@@ -8,20 +8,20 @@
     Version: 1.0
 
 -----------------------------------------------------------------------------------
-    
+
     CSS INDEX
     ===================
-	
+
     1. Theme Default CSS (body, link color, section etc)
 	2. Header Top Area
-	3. Slider Area 
+	3. Slider Area
 	4. Banner Area
-	5. Featured product
+	5. Featured products
 	6. Hot Deals Area
 	7. Latest Blog Area
 	8. Footer Area
 		9. Home Two
-			9.1 Header Area	
+			9.1 Header Area
 			9.2 Menu Area
 			9.3 Slider Area
 			9.4 Shipping Area
@@ -607,7 +607,7 @@ a.promo-link:hover h1{opacity:1;transform: scale3d(1, 1, 1);}
   z-index: 1;
 }
 .promo-link:hover .sl-btn{opacity:0;}
-/* -------------- 5. Featured product  ---------------- */
+/* -------------- 5. Featured products  ---------------- */
 .featured-area {
   padding-bottom: 56px;
   padding-top: 53px;
@@ -726,7 +726,7 @@ ul.pro-rating li, .pro-review ul li, .social-icon ul li {
   border-color: #FF7575;
 }
 .pro-action .test + .tooltip > .tooltip-inner {
-  background-color: #FF7575; 
+  background-color: #FF7575;
 }
 .pro-action .test + .tooltip.top > .tooltip-arrow {
   border-top: 5px solid #FF7575;
@@ -1587,7 +1587,7 @@ ul.pro-rating li, .pro-review ul li, .social-icon ul li {
   color: #666666;
 }
 .cart-action a + .tooltip > .tooltip-inner {
-  background-color: #00cccc; 
+  background-color: #00cccc;
 }
 .cart-action a + .tooltip.top > .tooltip-arrow {
   border-top: 5px solid #00cccc;
@@ -3274,7 +3274,7 @@ padding: 15px;width:100%}
   border-color: #ff7575;
   color: #ff7575;
 }
-/*=========================== 
+/*===========================
 	17. Login Page Css
 ============================= */
 .login-area {
@@ -3518,7 +3518,7 @@ p.alert {
 .four-zero-content a:hover {
   background: #fe4847 none repeat scroll 0 0;
 }
-/*=========================== 
+/*===========================
 	20. Product Single Css
 ============================= */
 .product-simple-area {
@@ -3764,7 +3764,7 @@ text-transform: uppercase;}
 .product-comments .product-comments-content span.pro-comments-rating{float: right;}
 .product-comments .product-comments-content span i{}
 .product-tab .desc{}
-.product-tab 
+.product-tab
 .review-form-wrapper{}
 .review-form-wrapper h3 {
   font-size: 20px;
@@ -3939,7 +3939,7 @@ text-transform: uppercase;}
   margin-left: 10px;
   text-decoration: line-through;
 }
-/*=========================== 
+/*===========================
 	21. ScrollUp
 ============================= */
 #scrollUp {
