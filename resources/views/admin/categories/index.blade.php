@@ -10,7 +10,7 @@
         <hr>
 
         <h2>Всі категорії</h2>
-        <table class="">
+        <table class="table">
             <tr>
                 <th>Назва</th>
                 <th>Розділ</th>
@@ -20,7 +20,7 @@
             </tr>
         @foreach($categories as $category)
             <tr>
-                <td>{{ $category->title }}</td>
+                <td><a href="{{route('category', $category->id)}}" target="_blank">{{ $category->title }}</a></td>
                 <td>{{ $category->section }}</td>
                 <td>{{ $category->visibility }}</td>
                 <td><img src="{{ asset('images/categories/'.$category->banner_shop) }}" alt="" height="100"></td>

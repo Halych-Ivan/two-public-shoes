@@ -27,7 +27,8 @@
             </div>
 
             <div class="mb-3">
-                <select class="form-select" aria-label="section" name="section">
+                <label for="section" class="form-label">Секція категорії</label>
+                <select class="form-select" aria-label="section" name="section" id="section">
                     @php($section = old('section') ?? $category->section ?? '')
                     <option value="0" {{ $section == '' ? 'selected' : '' }}>не обрано</option>
                     <option value="m" {{ $section == 'm' ? 'selected' : '' }}>Чоловік</option>
@@ -52,12 +53,13 @@
             </div>
 
             <div class="mb-3">
-                <label for="visibility" class="form-label">Видимість</label>
+                <label for="visibility" class="form-label">Видимість (чим більше значення - тим вище категорія)</label>
                 <input type="text"
                        class="form-control"
                        id="visibility"
                        name="visibility"
-                       placeholder="{{ old('visibility', 'Чим більше значення - тим вище категорія') }}">
+                       placeholder="{{ old('visibility', $category->visibility??'') }}">
+
             </div>
 
             <button type="submit" class="btn btn-primary mt-3">Зберегти</button>

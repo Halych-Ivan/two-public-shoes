@@ -10,7 +10,7 @@
         <hr>
 
         <h2>Всі продукти</h2>
-        <table class="">
+        <table class="table">
             <tr>
                 <th>Назва</th>
                 <th>Категорія</th>

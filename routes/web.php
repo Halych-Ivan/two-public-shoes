@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', '\App\Http\Controllers\IndexController@index')->name('home');
+Route::get('/category/{id}', '\App\Http\Controllers\CategoriesController@index')->name('category');
+
+
+
 
 
 
