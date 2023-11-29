@@ -44,22 +44,24 @@
 <body>
     @include('__shop.header')
 
-    @if($config->slider)
-        @include('__shop.slider-area')
-    @endif
+{{--    @if($config->slider)--}}
+{{--        @include('__shop.slider-area')--}}
+{{--    @endif--}}
 
-    @if($config->featured)
-        @include('__shop.banner-area')
-    @endif
+    @yield('content')
 
-    @if($config->brands)
-        @include('__shop.our-brand-area')
-    @endif
+{{--    @if($config->featured)--}}
+{{--        @include('__shop.banner-area')--}}
+{{--    @endif--}}
+
+{{--    @if($config->brands)--}}
+{{--        @include('__shop.our-brand-area')--}}
+{{--    @endif--}}
 
 
 
 
-    @include('__shop.footer')
+{{--    @include('__shop.footer')--}}
 
 <!-- all js here -->
 <!-- jquery latest version -->

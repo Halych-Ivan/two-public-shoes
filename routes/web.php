@@ -32,6 +32,10 @@ Route::post('/admin/form', '\App\Http\Controllers\Admin\IndexController@form')->
 // Admin panel
 //************************************************************
 Route::prefix('admin')->name('admin.')/*->middleware(['auth', 'admin'])*/->group(function (){
+    Route::resource('banners', \App\Http\Controllers\Admin\BannersController::class);
+
+
+
     Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);
     Route::resource('products', \App\Http\Controllers\Admin\ProductController::class);
     Route::delete('/products/{product}/images/{image}', '\App\Http\Controllers\Admin\ProductController@destroyImage')

@@ -29,4 +29,31 @@ class Controller extends BaseController
         $fileForDelete = public_path('images/' . $folder . '/' . $file);
         if (File::exists($fileForDelete)) { File::delete($fileForDelete); }
     }
+
+
+
+
+    ///////////////////////////////////////////////////////////
+    protected function save($request, $model, $folder)
+    {
+        if(isset($request['title'])){ $model->title = $request['title']; }
+        if(isset($request['image'])){$model->image = $folder.'/'.$this->saveFile($request['image'], $folder, $model->image);}
+
+        $model->save();
+    }
+
+    protected function saveFile($file, $folder, $fileDelete = false)
+    {
+        if($fileDelete){ $this->deleteFile($fileDelete); }
+        $filename = Str::random(40) . '.' . $file->getClientOriginalExtension();
+        $file->move(public_path($folder), $filename);
+        return $filename;
+    }
+
+    protected function deleteFile($file)
+    {
+        $fileForDelete = public_path($file);
+        if (File::exists($fileForDelete)) { File::delete($fileForDelete); }
+    }
+    /////////////////////////////////////////////////////////////////
 }

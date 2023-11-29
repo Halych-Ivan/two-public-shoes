@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>ADMIN</title>
+    <title>@yield('title', 'ADMIN')</title>
     <meta name="description" content="">
 
     <!-- Place favicon.ico in the root directory -->
@@ -31,6 +31,7 @@
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="{{route('admin')}}">Загальні</a></li>
 {{--                    <li><a class="dropdown-item" href="{{route('admin.logo')}}">Логотип</a></li>--}}
+                    <li><a class="dropdown-item" href="{{route('admin.banners.index')}}">Баннери</a></li>
                     <li><a class="dropdown-item" href="{{route('admin.categories.index')}}">Категорії</a></li>
                     <li><a class="dropdown-item" href="{{route('admin.products.index')}}">Продукти</a></li>
                     <li><a class="dropdown-item" href="#">Something else here</a></li>

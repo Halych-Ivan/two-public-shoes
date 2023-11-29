@@ -1945,7 +1945,7 @@ ul.pro-rating li, .pro-review ul li, .social-icon ul li {
 /*----------------------------------------*/
 /*------------ 10.1 Banner Area --------------*/
 .bannerhead-area {
-  background: rgba(0, 0, 0, 0) url("img/other-pg/header-banner.jpg") no-repeat scroll center center;
+  /*background: rgba(0, 0, 0, 0) url("img/other-pg/header-banner.jpg") no-repeat scroll center center;*/
   position: relative;
 }
 .bannerhead-area .banner-heading {
