@@ -4,12 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\CategoryRequest;
+use App\Models\Banner;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
-class CategoryController extends Controller
+class CategoriesController extends Controller
 {
 
     public function index()
@@ -25,34 +26,37 @@ class CategoryController extends Controller
 
     public function create(Category $category)
     {
-        return view('admin.categories.create', compact('category'));
+        $banners = Banner::all();
+        return view('admin.categories.add_edit', compact('category', 'banners'));
     }
 
 
     public function store(CategoryRequest $request, Category $category)
     {
         $data = $request->validated();
-        $this->add($data, $category);
+        $this->save($data, $category);
         return redirect()->route('admin.categories.index');
     }
 
 
     public function show(Category $category)
     {
+
         return view('admin.categories.create', compact('category'));
     }
 
 
     public function edit(Category $category)
     {
-        return view('admin.categories.create', compact('category'));
+        $banners = Banner::all();
+        return view('admin.categories.add_edit', compact('category', 'banners'));
     }
 
 
     public function update(CategoryRequest $request, Category $category)
     {
         $data = $request->validated();
-        $this->add($data, $category);
+        $this->save($data, $category);
         return redirect()->route('admin.categories.index');
     }
 

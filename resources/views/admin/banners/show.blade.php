@@ -13,9 +13,8 @@
 
         <div class="text-center">
             <p>Заголовок - <b>{{$banner->title}}</b></p>
-            <img src="{{asset($banner->image)}}" alt="">
+            <img src="{{asset($banner->image)}}" alt="" height="200">
         </div>
-
 
     </div>
 @endsection

@@ -1,15 +1,17 @@
 @extends('admin.layout')
-@section('title', 'ADMIN')
 
+@php($title = 'Товари')
+
+@section('title', $title)
 
 @section('content')
     <div class="container">
 
-        <h1>Продукт</h1>
+        <h1>{{ $title }}</h1>
         <x-admin.action-icons resource="products" id=""></x-admin.action-icons>
         <hr>
 
-        <h2>Всі продукти</h2>
+        <h2>Всі товари</h2>
         <table class="table">
             <tr>
                 <th>Назва</th>

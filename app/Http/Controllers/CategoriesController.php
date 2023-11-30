@@ -12,7 +12,6 @@ class CategoriesController extends Controller
     {
         $category = Category::find($id);
 
-
         return view('__shop.categories.index', compact('category'));
     }
 

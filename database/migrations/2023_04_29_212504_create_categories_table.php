@@ -17,7 +17,9 @@ return new class extends Migration
             $table->string('section')->default('0');
             $table->string('visibility')->default('0');
             $table->string('banner_shop')->nullable();
-            $table->string('banner_heading')->nullable();
+
+
+            $table->foreignId('banner_id')->nullable()->constrained()->onDelete('set null');
 
             $table->softDeletes();
             $table->timestamps();

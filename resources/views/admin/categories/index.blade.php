@@ -1,11 +1,14 @@
 @extends('admin.layout')
-@section('title', 'ADMIN')
+
+@php($title = 'Категорії')
+
+@section('title', $title)
 
 
 @section('content')
     <div class="container">
 
-        <h1>Категорії</h1>
+        <h1>{{ $title }}</h1>
         <x-admin.action-icons resource="categories" id="{{$category->id ?? ''}}"></x-admin.action-icons>
         <hr>
 
@@ -15,15 +18,18 @@
                 <th>Назва</th>
                 <th>Розділ</th>
                 <th>Видимість</th>
-                <th>Банер категорії</th>
+                <th>Банер 1920х400</th>
                 <th>Банер верх</th>
             </tr>
         @foreach($categories as $category)
+{{--            {{dd($category->banner->image)}}--}}
             <tr>
                 <td><a href="{{route('category', $category->id)}}" target="_blank">{{ $category->title }}</a></td>
                 <td>{{ $category->section }}</td>
                 <td>{{ $category->visibility }}</td>
-                <td><img src="{{ asset('images/categories/'.$category->banner_shop) }}" alt="" height="100"></td>
+                <td>
+                    {{$category->banner->title ?? ''}}
+                    <img src="{{ asset($category->banner->image ?? '') }}" alt="" height="100"></td>
                 <td><img src="{{ asset('images/categories/'.$category->banner_heading) }}" alt="" height="100"></td>
                 <td class="text-center"><x-admin.action-icons resource="categories" id="{{$category->id}}"></x-admin.action-icons></td>
             </tr>

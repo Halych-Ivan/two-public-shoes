@@ -36,8 +36,8 @@ Route::prefix('admin')->name('admin.')/*->middleware(['auth', 'admin'])*/->group
 
 
 
-    Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);
-    Route::resource('products', \App\Http\Controllers\Admin\ProductController::class);
+    Route::resource('categories', \App\Http\Controllers\Admin\CategoriesController::class);
+    Route::resource('products', \App\Http\Controllers\Admin\ProductsController::class);
     Route::delete('/products/{product}/images/{image}', '\App\Http\Controllers\Admin\ProductController@destroyImage')
         ->name('products.images.destroy');
 

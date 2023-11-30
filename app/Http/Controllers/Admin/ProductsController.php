@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
-class ProductController extends Controller
+class ProductsController extends Controller
 {
 
     public function index()
@@ -28,7 +28,7 @@ class ProductController extends Controller
     public function create(Product $product)
     {
         $categories = Category::query()->get();
-        return view('admin.products.create', compact('product', 'categories'));
+        return view('admin.products.add_edit', compact('product', 'categories'));
     }
 
 
@@ -50,7 +50,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $categories = Category::query()->get();
-        return view('admin.products.create', compact('product', 'categories'));
+        return view('admin.products.add_edit', compact('product', 'categories'));
     }
 
 

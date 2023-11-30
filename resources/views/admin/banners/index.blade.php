@@ -25,8 +25,8 @@
                     <td class="text-center"><x-admin.action-icons resource="banners" id="{{$banner->id}}"></x-admin.action-icons></td>
                 </tr>
             @endforeach
-
         </table>
+
     </div>
 @endsection
 

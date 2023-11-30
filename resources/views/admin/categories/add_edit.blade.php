@@ -36,13 +36,24 @@
                 </select>
             </div>
 
+
             <div class="mb-3">
-                <label for="banner_heading" class="form-label">Оберіть файл банеру (1920x400)</label>
-                <input class="form-control" type="file" id="banner_heading" name="banner_heading">
-                @if($category->banner_heading)
-                    <img src="{{ asset('images/categories/'.$category->banner_heading) }}" height="100" alt="">
+                <label for="banner" class="form-label">Банер </label>
+                <select class="form-select" aria-label="banner" name="banner_id" id="banner">
+                    @php($ban = old('banner') ?? $category->banner ?? '')
+                    @foreach($banners as $banner)
+                        <option value="{{$banner->id}}" {{ $ban == '' ? 'selected' : '' }}>{{$banner->title}}</option>
+                    @endforeach
+                    <option value="NOT" {{ $ban == '' ? 'selected' : '' }}>Відсутній</option>
+                </select>
+                @if($category->banner)
+                    Банер - <span>{{$category->banner->title}}</span>
+                    <img src="{{asset($category->banner->image)}}" height="50">
                 @endif
             </div>
+
+
+
 
             <div class="mb-3">
                 <label for="banner_shop" class="form-label">Оберіть файл банеру (870x247)</label>

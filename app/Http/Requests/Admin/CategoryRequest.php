@@ -25,7 +25,7 @@ class CategoryRequest extends FormRequest
             'title' => '',
             'section' => '',
             'visibility' => '',
-            'banner_heading' => 'image|mimes:png,jpg,jpeg|max:2048',
+            'banner_id' => 'nullable|string|max:255',
             'banner_shop' => 'image|mimes:png,jpg,jpeg|max:2048',
         ];
     }

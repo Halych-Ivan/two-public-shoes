@@ -14,5 +14,9 @@ class Banner extends Model
     protected $table = 'banners';
     protected $guarded = false;
 
+    public function categories()
+    {
+        return $this->hasMany(Category::class);
+    }
 
 }

@@ -34,9 +34,13 @@ class Controller extends BaseController
 
 
     ///////////////////////////////////////////////////////////
-    protected function save($request, $model, $folder)
+    protected function save($request, $model, $folder = null)
     {
         if(isset($request['title'])){ $model->title = $request['title']; }
+        if(isset($request['banner_id'])){
+            $model->banner_id = $request['banner_id'];
+            if($model->banner_id == 'NOT') {$model->banner_id = null;}
+        }
         if(isset($request['image'])){$model->image = $folder.'/'.$this->saveFile($request['image'], $folder, $model->image);}
 
         $model->save();

@@ -16,6 +16,7 @@
             @csrf
             @if($banner->exists) @method('PATCH') @endif
 
+
             <x-admin.input-text name="title" value="{{ old('title', $banner->title) }}" placeholder="Заголовок"></x-admin.input-text>
             <x-admin.input-file src="{{ old('image') }}" name="image" title="Виберіть картинку розміром  1920х400"></x-admin.input-file>
 
