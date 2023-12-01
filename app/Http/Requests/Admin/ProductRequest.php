@@ -23,11 +23,10 @@ class ProductRequest extends FormRequest
     {
         return [
             'title' => 'required|string|max:255',
-            'category_id' => 'nullable|string|max:255',
-            'description' => 'string',
-            'visibility' => 'string',
-            'price' => 'required|numeric|regex:/^\d+(\.\d{1,2})?$/',
-
+            'price' => 'nullable|numeric|regex:/^\d+(\.\d{1,2})?$/',
+            'description' => 'nullable|string',
+            'category_id' => 'nullable|max:255',
+            'visibility' => 'nullable|string',
         ];
     }
 }

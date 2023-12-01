@@ -35,7 +35,7 @@ class ProductsController extends Controller
     public function store(ProductRequest $request, Product $product)
     {
         $data = $request->validated();
-        $this->add($data, $product);
+        $this->save($data, $product);
         return redirect()->route('admin.products.index');
 
     }

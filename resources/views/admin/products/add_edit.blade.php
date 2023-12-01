@@ -24,9 +24,9 @@
 
 
             <div class="mb-3">
-                <label for="category" class="form-label">Категорія</label>
-                <select class="form-select" aria-label="category" name="category" id="category">
-                    @php($cat = old('category') ?? $category->title ?? '')
+                <label for="category_id" class="form-label">Категорія</label>
+                <select class="form-select" aria-label="category_id" name="category_id" id="category_id">
+                    @php($cat = old('category_id') ?? $product->category->title ?? '')
                     @foreach($categories as $category)
                         <option value="{{$category->id}}" {{ $cat == '' ? 'selected' : '' }}>{{$category->title}}</option>
                     @endforeach
@@ -39,15 +39,15 @@
 
 
 
-            <div class="mb-3">
-                <label for="image" class="form-label">Фото</label>
-                <input type="file"
-                       class="form-control"
-                       id="image"
-                       name="image"
+{{--            <div class="mb-3">--}}
+{{--                <label for="image" class="form-label">Фото</label>--}}
+{{--                <input type="file"--}}
+{{--                       class="form-control"--}}
+{{--                       id="image"--}}
+{{--                       name="image"--}}
 {{--                       value="{{ old('image', $product->image) }}"--}}
-                       placeholder="Фото продукту">
-            </div>
+{{--                       placeholder="Фото продукту">--}}
+{{--            </div>--}}
 
 
 

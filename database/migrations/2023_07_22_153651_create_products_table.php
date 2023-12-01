@@ -31,8 +31,8 @@ return new class extends Migration
 
             $table->string('visibility')->default('0');
 
-            $table->foreignId('category_id')->nullable();
-            $table->foreign('category_id')->references('id')->on('categories');
+
+            $table->foreignId('category_id')->nullable()->constrained()->onDelete('set null');
 
             $table->softDeletes();
             $table->timestamps();

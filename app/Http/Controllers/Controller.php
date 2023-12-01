@@ -33,14 +33,24 @@ class Controller extends BaseController
 
 
 
-    ///////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     protected function save($request, $model, $folder = null)
     {
         if(isset($request['title'])){ $model->title = $request['title']; }
+        if(isset($request['price'])){ $model->price = $request['price']; }
+        if(isset($request['description'])){ $model->description = $request['description']; }
+        if(isset($request['visibility'])){ $model->visibility = $request['visibility']; }
+
+
         if(isset($request['banner_id'])){
             $model->banner_id = $request['banner_id'];
             if($model->banner_id == 'NOT') {$model->banner_id = null;}
         }
+        if(isset($request['category_id'])){
+            $model->category_id = $request['category_id'];
+            if($model->category_id == 'NOT') {$model->category_id = null;}
+        }
+
         if(isset($request['image'])){$model->image = $folder.'/'.$this->saveFile($request['image'], $folder, $model->image);}
 
         $model->save();
@@ -59,5 +69,5 @@ class Controller extends BaseController
         $fileForDelete = public_path($file);
         if (File::exists($fileForDelete)) { File::delete($fileForDelete); }
     }
-    /////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
