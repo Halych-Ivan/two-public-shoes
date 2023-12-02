@@ -24,9 +24,12 @@ class ProductRequest extends FormRequest
         return [
             'title' => 'required|string|max:255',
             'price' => 'nullable|numeric|regex:/^\d+(\.\d{1,2})?$/',
+            'rating' => 'nullable|numeric',
             'description' => 'nullable|string',
             'category_id' => 'nullable|max:255',
             'visibility' => 'nullable|string',
+            'image' => 'nullable|mimes:png,jpg,jpeg,webp,csv,txt,xlx,xls,pdf,doc,docx,webp|max:2048',
+            'images' => 'nullable|mimes:png,jpg,jpeg,webp,csv,txt,xlx,xls,pdf,doc,docx,webp|max:2048',
         ];
     }
 }

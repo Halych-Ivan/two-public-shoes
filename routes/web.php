@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', '\App\Http\Controllers\IndexController@index')->name('home');
 Route::get('/category/{id}', '\App\Http\Controllers\CategoriesController@index')->name('category');
+Route::get('/products/{product}', '\App\Http\Controllers\ProductsController@index')->name('product');
 
 
 
@@ -38,8 +39,10 @@ Route::prefix('admin')->name('admin.')/*->middleware(['auth', 'admin'])*/->group
 
     Route::resource('categories', \App\Http\Controllers\Admin\CategoriesController::class);
     Route::resource('products', \App\Http\Controllers\Admin\ProductsController::class);
-    Route::delete('/products/{product}/images/{image}', '\App\Http\Controllers\Admin\ProductController@destroyImage')
+    Route::delete('/products/{product}/images', '\App\Http\Controllers\Admin\ProductsController@destroyImage')
         ->name('products.images.destroy');
+    Route::delete('/products/{product}/images_pr/{image}', '\App\Http\Controllers\Admin\ProductsController@destroyImages')
+        ->name('products.images_pr.destroy');
 
 });
 

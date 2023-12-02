@@ -35,7 +35,7 @@ class ProductsController extends Controller
     public function store(ProductRequest $request, Product $product)
     {
         $data = $request->validated();
-        $this->save($data, $product);
+        $this->save($data, $product, 'uploads/products');
         return redirect()->route('admin.products.index');
 
     }
@@ -57,19 +57,17 @@ class ProductsController extends Controller
     public function update(ProductRequest $request, Product $product)
     {
         $data = $request->validated();
-        $this->add($data, $product);
+        $this->save($data, $product, 'uploads/products');
 
-        if(isset($data['image'])){
-            $filename = time() . '.' . $data['image']->getClientOriginalExtension();
-            $data['image']->move(public_path('images/products/' . $product->id), $filename);
+        if(isset($data['images'])){
+            $filename = time() . '.' . $data['images']->getClientOriginalExtension();
+            $data['images']->move(public_path('uploads/products/' . $product->id), $filename);
 
-            $product->images()->create([
-                'image_path' => 'images/products/' . $product->id . '/' . $filename
-            ]);
+            $product->images()->create([ 'image_path' => 'uploads/products/' . $product->id . '/' . $filename ]);
             return redirect()->route('admin.products.edit', $product);
         }
 
-        return redirect()->route('admin.products.index');
+        return redirect()->route('admin.products.edit', $product);
     }
 
 
@@ -82,10 +80,23 @@ class ProductsController extends Controller
     }
 
 
+
     //видалення фото продукту
-    public function destroyImage(Product $product, ProductImage $image)
+    public function destroyImage(Product $product)
+    {
+        $fileForDelete = public_path($product->image);
+        if (File::exists($fileForDelete)) { File::delete($fileForDelete); }
+
+        $product->image = null;
+        $product->save();
+
+        return redirect()->route('admin.products.edit', $product->id)->with('alert', 'Дія виконана успішно!');
+    }
+
+    public function destroyImages(Product $product, ProductImage $image)
     {
         $fileForDelete = public_path($image->image_path);
+
         if (File::exists($fileForDelete)) { File::delete($fileForDelete); }
         $image->delete();
         return redirect()->route('admin.products.edit', $product)->with('alert', 'Дія виконана успішно!');
@@ -93,15 +104,4 @@ class ProductsController extends Controller
 
 
 
-
-    private function add($data, $model)
-    {
-        if(isset($data['title'])) { $model->title = $data['title']; };
-        if(isset($data['category_id'])) { $model->category_id = $data['category_id']; };
-        if(isset($data['visibility'])) { $model->visibility = $data['visibility']; };
-        if(isset($data['price'])) { $model->price = $data['price']; };
-        if(isset($data['description'])) { $model->description = $data['description']; };
-
-        $model->save();
-    }
 }

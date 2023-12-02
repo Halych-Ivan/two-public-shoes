@@ -21,7 +21,7 @@
             @foreach($banners as $banner)
                 <tr>
                     <td>{{ $banner->title }}</td>
-                    <td><img src="{{ asset($banner->image) }}" alt="" height="100"></td>
+                    <td><img src="{{ asset($banner->image ?? 'uploads/banners/1920x400.jpg') }}" alt="" height="100"></td>
                     <td class="text-center"><x-admin.action-icons resource="banners" id="{{$banner->id}}"></x-admin.action-icons></td>
                 </tr>
             @endforeach

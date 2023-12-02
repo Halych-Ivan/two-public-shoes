@@ -30,7 +30,7 @@
                 <td>{{ $category->visibility }}</td>
                 <td>
                     {{$category->banner->title ?? ''}}
-                    <img src="{{ asset($category->banner->image ?? '') }}" alt="" height="100"></td>
+                    <img src="{{ asset($category->banner->image ?? '') }}" alt="" height="50"></td>
                 <td><img src="{{ asset($category->image) ?? '' }}" alt="" height="100"></td>
                 <td class="text-center"><x-admin.action-icons resource="categories" id="{{$category->id}}"></x-admin.action-icons></td>
             </tr>

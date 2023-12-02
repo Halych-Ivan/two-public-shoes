@@ -40,6 +40,7 @@ class Controller extends BaseController
         if(isset($request['price'])){ $model->price = $request['price']; }
         if(isset($request['description'])){ $model->description = $request['description']; }
         if(isset($request['visibility'])){ $model->visibility = $request['visibility']; }
+        if(isset($request['rating'])){ $model->rating = $request['rating']; }
 
 
         if(isset($request['banner_id'])){

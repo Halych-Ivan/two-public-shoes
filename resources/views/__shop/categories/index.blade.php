@@ -187,9 +187,9 @@
                                         <div class="col-md-4 col-sm-4">
                                             <div class="single-product">
                                                 <div class="product-image">
-                                                    <a class="product-img" href="#">
-                                                        <img class="primary-img" src="/img/home-1/fp-1.jpg" alt=""/>
-                                                        <img class="secondary-img" src="/img/home-1/fp-2.jpg" alt=""/>
+                                                    <a class="product-img" href="{{route('product', $product)}}">
+                                                        <img class="primary-img" src="{{asset($product->image)}}" alt=""/>
+                                                        <img class="secondary-img" src="{{asset($product->image)}}" alt=""/>
                                                     </a>
                                                 </div>
 {{--                                                <span class="onsale red">--}}
@@ -197,13 +197,13 @@
 {{--                                                </span>--}}
                                                 <div class="product-action">
                                                     <h4><a href="#">{{$product->title}}</a></h4>
-{{--                                                    <ul class="pro-rating">--}}
-{{--                                                        <li class="pro-ratcolor"><i class="fa fa-star"></i></li>--}}
-{{--                                                        <li class="pro-ratcolor"><i class="fa fa-star"></i></li>--}}
-{{--                                                        <li class="pro-ratcolor"><i class="fa fa-star"></i></li>--}}
-{{--                                                        <li><i class="fa fa-star"></i></li>--}}
-{{--                                                        <li><i class="fa fa-star"></i></li>--}}
-{{--                                                    </ul>--}}
+                                                    @isset($product->rating)
+                                                    <ul class="pro-rating">
+                                                        @for($i = 0; $i < $product->rating; $i++)
+                                                            <li class="pro-ratcolor"><i class="fa fa-star"></i></li>
+                                                        @endfor
+                                                    </ul>
+                                                    @endisset
                                                     <span class="price">{{$product->price}}</span>
                                                 </div>
                                                 <div class="pro-action">
@@ -243,7 +243,7 @@
                                             <div class="col-md-12">
                                                 <div class="shop-list-single shop-single-product-area">
                                                     <div class="shop-list-left">
-                                                        <a href="#"><img src="/img/home-1/fp-1.jpg" alt="" /></a>
+                                                        <a href="#"><img src="{{asset($product->image)}}" alt="" height="270"></a>
                                                         <span class="shop-cart-icon">
                                                                 <a href="#"><i class="fa fa-shopping-bag"></i></a>
                                                             </span>
@@ -253,11 +253,12 @@
                                                             <h2><a href="#">{{$product->title}}</a></h2>
                                                             <p><b>{{$product->price}}</b></p>
                                                             <div class="rating">
-                                                                <i class="fa fa-star color"></i>
-                                                                <i class="fa fa-star color"></i>
-                                                                <i class="fa fa-star color"></i>
-                                                                <i class="fa fa-star color"></i>
-                                                                <i class="fa fa-star"></i>
+                                                                @isset($product->rating)
+                                                                    @for($i = 0; $i < $product->rating; $i++)
+                                                                        <i class="fa fa-star color"></i>
+                                                                    @endfor
+                                                                @endisset
+
                                                             </div>
                                                         </div>
                                                         <div class="product-desc">
