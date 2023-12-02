@@ -34,7 +34,7 @@ class CategoriesController extends Controller
     public function store(CategoryRequest $request, Category $category)
     {
         $data = $request->validated();
-        $this->save($data, $category);
+        $this->save($data, $category, 'uploads/categories');
         return redirect()->route('admin.categories.index');
     }
 
@@ -56,7 +56,7 @@ class CategoriesController extends Controller
     public function update(CategoryRequest $request, Category $category)
     {
         $data = $request->validated();
-        $this->save($data, $category);
+        $this->save($data, $category, 'uploads/categories');
         return redirect()->route('admin.categories.index');
     }
 

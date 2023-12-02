@@ -53,13 +53,11 @@
             </div>
 
 
-
-
             <div class="mb-3">
-                <label for="banner_shop" class="form-label">Оберіть файл банеру (870x247)</label>
-                <input class="form-control" type="file" id="banner_shop" name="banner_shop">
-                @if($category->banner_shop)
-                    <img src="{{ asset('images/categories/'.$category->banner_shop) }}" height="100" alt="">
+                <label for="image" class="form-label">Оберіть файл банеру (870x247)</label>
+                <input class="form-control" type="file" id="image" name="image">
+                @if($category->image)
+                    <img src="{{ asset($category->image) }}" height="100" alt="">
                 @endif
             </div>
 

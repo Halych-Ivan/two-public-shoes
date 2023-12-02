@@ -19,7 +19,8 @@
                 <th>Розділ</th>
                 <th>Видимість</th>
                 <th>Банер 1920х400</th>
-                <th>Банер верх</th>
+                <th>Банер 870х247</th>
+                <th>Actions</th>
             </tr>
         @foreach($categories as $category)
 {{--            {{dd($category->banner->image)}}--}}
@@ -30,7 +31,7 @@
                 <td>
                     {{$category->banner->title ?? ''}}
                     <img src="{{ asset($category->banner->image ?? '') }}" alt="" height="100"></td>
-                <td><img src="{{ asset('images/categories/'.$category->banner_heading) }}" alt="" height="100"></td>
+                <td><img src="{{ asset($category->image) ?? '' }}" alt="" height="100"></td>
                 <td class="text-center"><x-admin.action-icons resource="categories" id="{{$category->id}}"></x-admin.action-icons></td>
             </tr>
         @endforeach

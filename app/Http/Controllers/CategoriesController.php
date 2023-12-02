@@ -13,6 +13,8 @@ class CategoriesController extends Controller
         $categories = Category::all();
         $category = Category::find($id);
 
+//        dd($category);
+
         return view('__shop.categories.index', compact('category', 'categories'));
     }
 
