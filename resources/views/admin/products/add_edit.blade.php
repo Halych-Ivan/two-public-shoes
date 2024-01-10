@@ -33,7 +33,7 @@
                 <select class="form-select" aria-label="category_id" name="category_id" id="category_id">
                     @php($cat = old('category_id') ?? $product->category->title ?? '')
                     @foreach($categories as $category)
-                        <option value="{{$category->id}}" {{ $cat == '' ? 'selected' : '' }}>{{$category->title}}</option>
+                        <option value="{{$category->id}}" {{ $cat == $category->title ? 'selected' : '' }}>{{$category->title}}</option>
                     @endforeach
                     <option value="NOT" {{ $cat == '' ? 'selected' : '' }}>Відсутній</option>
                 </select>

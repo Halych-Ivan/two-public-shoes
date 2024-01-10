@@ -54,8 +54,10 @@ class Controller extends BaseController
 
         if(isset($request['image'])){$model->image = $folder.'/'.$this->saveFile($request['image'], $folder, $model->image);}
 
+
         $model->save();
     }
+
 
     protected function saveFile($file, $folder, $fileDelete = false)
     {

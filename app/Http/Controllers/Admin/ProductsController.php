@@ -57,6 +57,8 @@ class ProductsController extends Controller
     public function update(ProductRequest $request, Product $product)
     {
         $data = $request->validated();
+//        dd($data);
+
         $this->save($data, $product, 'uploads/products');
 
         if(isset($data['images'])){
