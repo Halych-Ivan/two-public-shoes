@@ -49,8 +49,7 @@
     </div>
     <!-- slider end-->
 </section>
-<!-- SLIDER AREA END -->
-
+<!-- SLIDER AREA END -->g
 
 
     <!-- BANNER AREA START -->
