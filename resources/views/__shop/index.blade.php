@@ -59,24 +59,24 @@
 
                             <div class="col-md-3 col-sm-3 xs-res-mrbtm">
                                 <div class="banner-left">
-                                    <a class="promo-link" href="{{route('category', $products[0]->category)}}">
-                                        <img src="{{ asset($products[0]->category->image_v) }}" alt="" />
-                                        <h1>{{ $products[0]->category->title }}</h1>
+                                    <a class="promo-link" href="{{route('category', $categories[0])}}">
+                                        <img src="{{ asset($categories[0]->image_v) }}" alt="" />
+                                        <h1>{{ $categories[0]->title }}</h1>
                                         <span class="promo-hover"></span>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-3">
                                 <div class="banner-left-side">
-                                    <a class="mr-btm promo-link" href="{{route('product', $products[1])}}">
-                                        <img src="{{ asset($products[1]->image) }}" alt="" />
-                                        <h1>{{$products[1]->title}}</h1>
+                                    <a class="mr-btm promo-link" href="{{route('product', $products[0])}}">
+                                        <img src="{{ asset($products[0]->image) }}" alt="" />
+                                        <h1>{{$products[0]->title}}</h1>
 {{--                                        <span class="sl-btn">SALE</span>--}}
                                         <div class="promo-hover"></div>
                                     </a>
-                                    <a class="promo-link xs-res-mrbtm" href="{{route('product', $products[2])}}">
-                                        <img src="{{ asset($products[2]->image) }}" alt="" />
-                                        <h1>{{$products[2]->title}}</h1>
+                                    <a class="promo-link xs-res-mrbtm" href="{{route('product', $products[1])}}">
+                                        <img src="{{ asset($products[1]->image) }}" alt="" />
+                                        <h1>{{$products[1]->title}}</h1>
 {{--                                        <span class="sl-btn">SALE</span>--}}
                                         <div class="promo-hover"></div>
                                     </a>
@@ -84,24 +84,24 @@
                             </div>
                             <div class="col-md-3 col-sm-3 xs-res-mrbtm">
                                 <div class="banner-right">
-                                    <a class="promo-link" href="{{route('category', $products[3]->category)}}">
-                                        <img src="{{ asset($products[3]->category->image_v) }}" alt="" />
-                                        <h1>{{ $products[3]->category->title }}</h1>
+                                    <a class="promo-link" href="{{route('category', $categories[1])}}">
+                                        <img src="{{ asset($categories[1]->image_v) }}" alt="" />
+                                        <h1>{{ $categories[1]->title }}</h1>
                                         <span class="promo-hover"></span>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-3">
                                 <div class="banner-right-side">
-                                    <a class="mr-btm promo-link" href="{{route('product', $products[4])}}">
-                                        <img src="{{ asset($products[4]->image) }}" alt="" />
-                                        <h1>{{$products[4]->title}}</h1>
+                                    <a class="mr-btm promo-link" href="{{route('product', $products[2])}}">
+                                        <img src="{{ asset($products[2]->image) }}" alt="" />
+                                        <h1>{{$products[2]->title}}</h1>
             {{--                            <span class="sl-btn">SALE</span>--}}
                                         <div class="promo-hover"></div>
                                     </a>
-                                    <a class="promo-link" href="{{route('product', $products[5])}}">
-                                        <img src="{{ asset($products[5]->image) }}" alt="" />
-                                        <h1>{{$products[5]->title}}</h1>
+                                    <a class="promo-link" href="{{route('product', $products[3])}}">
+                                        <img src="{{ asset($products[3]->image) }}" alt="" />
+                                        <h1>{{$products[3]->title}}</h1>
             {{--                            <span class="sl-btn">SALE</span>--}}
                                         <div class="promo-hover"></div>
                                     </a>

@@ -11,15 +11,15 @@ class IndexController extends Controller
 {
     public function index()
     {
-
-        $products = Product::inRandomOrder()->limit(6)->get();
+        $categories = Category::inRandomOrder()->limit(2)->get();
+        $products = Product::inRandomOrder()->limit(4)->get();
 
 
 
 
         $data = '';
 
-        return view('__shop.index', compact('products'));
+        return view('__shop.index', compact('products', 'categories'));
 
 //        $config = Config::find(1);
 //        return view('__shop.layout', compact('config'));
