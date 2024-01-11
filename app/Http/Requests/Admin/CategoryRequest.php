@@ -27,6 +27,7 @@ class CategoryRequest extends FormRequest
             'visibility' => '',
             'banner_id' => 'nullable|string|max:255',
             'image' => 'image|mimes:png,jpg,jpeg,webp,csv,txt,xlx,xls,pdf,doc,docx,webp|max:2048',
+            'image_v' => 'image|mimes:png,jpg,jpeg,webp,csv,txt,xlx,xls,pdf,doc,docx,webp|max:2048',
         ];
     }
 }

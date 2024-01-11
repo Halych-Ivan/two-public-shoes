@@ -62,6 +62,15 @@
             </div>
 
             <div class="mb-3">
+                <label for="image_v" class="form-label">Оберіть файл банеру (270x630)</label>
+                <input class="form-control" type="file" id="image_v" name="image_v">
+                @if($category->image_v)
+                    <img src="{{ asset($category->image_v) }}" height="150" alt="">
+                @endif
+            </div>
+
+
+            <div class="mb-3">
                 <label for="visibility" class="form-label">Видимість (чим більше значення - тим вище категорія)</label>
                 <input type="text"
                        class="form-control"

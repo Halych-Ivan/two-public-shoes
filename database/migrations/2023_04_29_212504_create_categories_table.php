@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('section')->default('0');
             $table->string('visibility')->default('0');
             $table->string('image')->nullable();
+            $table->string('image_v')->nullable();
 
 
             $table->foreignId('banner_id')->nullable()->constrained()->onDelete('set null');
