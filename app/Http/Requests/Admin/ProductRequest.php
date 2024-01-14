@@ -29,6 +29,7 @@ class ProductRequest extends FormRequest
             'category_id' => 'nullable|max:255',
             'visibility' => 'nullable|string',
             'image' => 'nullable|mimes:png,jpg,jpeg,webp,csv,txt,xlx,xls,pdf,doc,docx,webp|max:2048',
+            'image_2' => 'nullable|mimes:png,jpg,jpeg,webp,csv,txt,xlx,xls,pdf,doc,docx,webp|max:2048',
             'images' => 'nullable|mimes:png,jpg,jpeg,webp,csv,txt,xlx,xls,pdf,doc,docx,webp|max:2048',
         ];
     }

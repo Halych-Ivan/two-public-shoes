@@ -55,7 +55,8 @@ class Controller extends BaseController
         }
 
         if(isset($request['image'])){$model->image = $folder.'/'.$this->saveFile($request['image'], $folder, $model->image);}
-        if(isset($request['image_v'])){$model->image_v = $folder.'/'.$this->saveFile($request['image_v'], $folder, $model->image);}
+        if(isset($request['image_2'])){$model->image_2 = $folder.'/'.$this->saveFile($request['image_2'], $folder, $model->image_2);}
+        if(isset($request['image_v'])){$model->image_v = $folder.'/'.$this->saveFile($request['image_v'], $folder, $model->image_v);}
 
 
         $model->save();

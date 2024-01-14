@@ -95,6 +95,17 @@ class ProductsController extends Controller
         return redirect()->route('admin.products.edit', $product->id)->with('alert', 'Дія виконана успішно!');
     }
 
+    public function destroyImage_2(Product $product)
+    {
+        $fileForDelete = public_path($product->image_2);
+        if (File::exists($fileForDelete)) { File::delete($fileForDelete); }
+
+        $product->image_2 = null;
+        $product->save();
+
+        return redirect()->route('admin.products.edit', $product->id)->with('alert', 'Дія виконана успішно!');
+    }
+
     public function destroyImages(Product $product, ProductImage $image)
     {
         $fileForDelete = public_path($image->image_path);

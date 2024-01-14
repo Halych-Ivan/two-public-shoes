@@ -38,8 +38,8 @@
                     <td>{{ $product->rating }}</td>
 
                     <td>
-                        <img src="{{ asset($product->image ?? 'uploads/products/270x300.jpg') }}" alt="" height="100">
-{{--                        <img src="{{ asset($product->_2 ?? 'uploads/products/270x300.jpg') }}" alt="" height="75">--}}
+                        <img src="{{ asset($product->image ?? 'uploads/products/270x300.jpg') }}" alt="" height="75">
+                        <img src="{{ asset($product->image_2 ?? 'uploads/products/270x300.jpg') }}" alt="" height="75">
 {{--                        @foreach($product->images as $image)--}}
 {{--                            <img src="{{ asset($image->image_path) }}" alt="{{ $product->name }}" height="75">--}}
 {{--                        @endforeach--}}
