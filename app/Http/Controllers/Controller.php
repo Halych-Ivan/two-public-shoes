@@ -36,7 +36,9 @@ class Controller extends BaseController
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     protected function save($request, $model, $folder = null)
     {
+        if(isset($request['active'])){ $model->active = $request['active']; }
         if(isset($request['title'])){ $model->title = $request['title']; }
+        if(isset($request['text'])){ $model->text = $request['text']; }
         if(isset($request['price'])){ $model->price = $request['price']; }
         if(isset($request['description'])){ $model->description = $request['description']; }
         if(isset($request['visibility'])){ $model->visibility = $request['visibility']; }

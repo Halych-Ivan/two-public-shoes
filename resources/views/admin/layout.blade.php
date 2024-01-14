@@ -31,6 +31,7 @@
                 <ul class="dropdown-menu">
 {{--                    <li><a class="dropdown-item" href="{{route('admin')}}">Загальні</a></li>--}}
 {{--                    <li><a class="dropdown-item" href="{{route('admin.logo')}}">Логотип</a></li>--}}
+                    <li><a class="dropdown-item" href="{{route('admin.main_banners.index')}}">Головний баннер</a></li>
                     <li><a class="dropdown-item" href="{{route('admin.banners.index')}}">Баннери</a></li>
                     <li><a class="dropdown-item" href="{{route('admin.categories.index')}}">Категорії</a></li>
                     <li><a class="dropdown-item" href="{{route('admin.products.index')}}">Продукти</a></li>
