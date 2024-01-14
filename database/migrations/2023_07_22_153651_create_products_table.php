@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('price')->nullable();
             $table->string('price_new')->nullable();
             $table->string('image')->nullable();
+            $table->string('image_2')->nullable();
             $table->string('size')->nullable();
 
             $table->string('rating')->nullable();

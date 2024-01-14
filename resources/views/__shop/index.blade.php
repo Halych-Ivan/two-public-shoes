@@ -115,7 +115,7 @@
                                 <div class="product-image">
                                     <a class="product-img" href="{{route('product', $product)}}">
                                         <img class="primary-img" src="{{asset($product->image)}}" alt="" />
-                                        <img class="secondary-img" src="{{asset($product->image)}}" alt="" />
+                                        <img class="secondary-img" src="{{asset($product->images[0]->image_path)}}" alt="" style="max-height: 300px; width: 270px">
                                     </a>
                                 </div>
 {{--                                <span class="onsale"><span class="sale-text">Sale</span></span>--}}

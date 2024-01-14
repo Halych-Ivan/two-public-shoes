@@ -51,6 +51,19 @@
                     </div>
                 @endisset
             </div>
+{{--            <div class="mb-3">--}}
+{{--                <label for="image_2" class="form-label">Фото 270x300 (2)</label>--}}
+{{--                <input type="file" class="form-control" id="image_2" name="image_2" value="{{ old('image_2', $product->image_2) }}" placeholder="Фото 270x300 (2)">--}}
+{{--                @isset($product->image_2)--}}
+{{--                    <div class="m-3" title="Видалити даний запис">--}}
+{{--                        <img src="{{ asset($product->image_2) }}" alt="" height="150">--}}
+{{--                        <button type="submit" form="del2" class="text-danger border">--}}
+{{--                            <i class="fas fa-trash"></i>--}}
+{{--                        </button>--}}
+{{--                    </div>--}}
+{{--                @endisset--}}
+{{--            </div>--}}
+
 
 
             <div class="mb-3">
@@ -71,6 +84,14 @@
             @csrf
         </form>
         @endisset
+{{--        @isset($product->image_2)--}}
+{{--            <form id="del2" class="inline" method="POST"--}}
+{{--                  action="{{route('admin.products.images.destroy', $product->id)}}"--}}
+{{--                  onsubmit="return confirm('Підтверджуєте видалення об\'єкту? {{$product->image_2}}')">--}}
+{{--                @method('DELETE')--}}
+{{--                @csrf--}}
+{{--            </form>--}}
+{{--        @endisset--}}
 
 
         <div class="m-3">
