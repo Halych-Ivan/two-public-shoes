@@ -11,12 +11,26 @@ class IndexController extends Controller
 
     public function index()
     {
-        //$q = new Config();
-        //$q->save();
         $config = Config::find(1);
 
         return view('admin.main.index', compact('config'));
     }
+
+    public function create(Config $config)
+    {
+        return view('admin.main.index', compact('config'));
+    }
+
+    public function store(BannersRequest $request, Banner $banner)
+    {
+        $data = $request->validated();
+        $this->save($data, $banner, 'uploads/banners');
+        return redirect()->route('admin.banners.index');
+    }
+
+
+
+
 
     public function img()
     {

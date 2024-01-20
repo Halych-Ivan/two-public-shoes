@@ -30,4 +30,13 @@ class IndexController extends Controller
 //        return view('__shop.layout', compact('config'));
     }
 
+
+    public function contact()
+    {
+        $config = Config::find(1);
+        $productsAll = Product::all();
+//        dd($productsAll);
+        return view('__shop.contact', compact('config', 'productsAll'));
+    }
+
 }

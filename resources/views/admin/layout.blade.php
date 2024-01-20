@@ -29,7 +29,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Налаштування</a>
                 <ul class="dropdown-menu">
-{{--                    <li><a class="dropdown-item" href="{{route('admin')}}">Загальні</a></li>--}}
+                    <li><a class="dropdown-item" href="{{route('admin.config.index')}}">Загальні</a></li>
 {{--                    <li><a class="dropdown-item" href="{{route('admin.logo')}}">Логотип</a></li>--}}
                     <li><a class="dropdown-item" href="{{route('admin.main_banners.index')}}">Головний баннер</a></li>
                     <li><a class="dropdown-item" href="{{route('admin.banners.index')}}">Баннери</a></li>

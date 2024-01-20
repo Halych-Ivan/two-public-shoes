@@ -52,13 +52,14 @@
             <div class="col-md-8 col-sm-8">
                 <div class="main-menu">
                     <ul class="list-inline">
-                        <li class="expand active"><a href="index.html">HOME</a>
-                            <ul class="single sub-menu">
-                                <li class="sub-menu-title"><a href="index.html">Home Pages</a></li>
-                                <li><a href="index.html">Home Version One</a></li>
-                                <li><a href="index-2.html">Home Version Two</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="{{ route('home') }}">ГОЛОВНА</a></li>
+{{--                        <li class="expand active"><a href="index.html">HOME</a>--}}
+{{--                            <ul class="single sub-menu">--}}
+{{--                                <li class="sub-menu-title"><a href="index.html">Home Pages</a></li>--}}
+{{--                                <li><a href="index.html">Home Version One</a></li>--}}
+{{--                                <li><a href="index-2.html">Home Version Two</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </li>--}}
                         <li><a href="#">WOMEN</a>
                             <!-- Mega Menu Four Column -->
                             <div class="mega-menu two-column">
@@ -114,7 +115,7 @@
                                 <li><a href="404.html">404 Error</a></li>
                             </ul>
                         </li>
-                        <li><a href="contact-us.html">CONTACT</a></li>
+                        <li><a href="{{route('contact')}}">КОНТАКТИ</a></li>
                     </ul>
                 </div>
             </div>

@@ -16,27 +16,26 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', '\App\Http\Controllers\IndexController@index')->name('home');
 Route::get('/category/{id}', '\App\Http\Controllers\CategoriesController@index')->name('category');
 Route::get('/products/{product}', '\App\Http\Controllers\ProductsController@index')->name('product');
+Route::get('contact', '\App\Http\Controllers\IndexController@contact')->name('contact');
 
 
 
 
 
-
-Route::get('/admin', '\App\Http\Controllers\Admin\IndexController@index')->name('admin');
+//Route::get('/admin', '\App\Http\Controllers\Admin\IndexController@index')->name('admin');
 Route::get('/admin/img', '\App\Http\Controllers\Admin\IndexController@img')->name('admin.logo');
-Route::post('/admin/form', '\App\Http\Controllers\Admin\IndexController@form')->name('admin.form');
-
-
-
+//Route::post('/admin/form', '\App\Http\Controllers\Admin\IndexController@form')->name('admin.form');
 
 //************************************************************
 // Admin panel
 //************************************************************
 Route::prefix('admin')->name('admin.')/*->middleware(['auth', 'admin'])*/->group(function (){
+
+//    Route::get('config', '\App\Http\Controllers\Admin\IndexController@index')->name('config');
+//    Route::post('config/form', '\App\Http\Controllers\Admin\IndexController@form')->name('config.form');
+
+    Route::resource('config', \App\Http\Controllers\Admin\ConfigController::class);
     Route::resource('banners', \App\Http\Controllers\Admin\BannersController::class);
-
-
-
     Route::resource('main_banners', \App\Http\Controllers\Admin\MainBannerController::class);
     Route::resource('categories', \App\Http\Controllers\Admin\CategoriesController::class);
     Route::resource('products', \App\Http\Controllers\Admin\ProductsController::class);
@@ -48,25 +47,7 @@ Route::prefix('admin')->name('admin.')/*->middleware(['auth', 'admin'])*/->group
         ->name('products.images_pr.destroy');
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//******************************************************************
 
 
 Route::middleware([

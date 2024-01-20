@@ -45,6 +45,14 @@ class Controller extends BaseController
         if(isset($request['rating'])){ $model->rating = $request['rating']; }
 
 
+        if(isset($request['phone'])){ $model->phone = $request['phone']; }
+        if(isset($request['phone_1'])){ $model->phone_1 = $request['phone_1']; }
+        if(isset($request['phone_2'])){ $model->phone_2 = $request['phone_2']; }
+        if(isset($request['email'])){ $model->email = $request['email']; }
+        if(isset($request['email_1'])){ $model->email_1 = $request['email_1']; }
+        if(isset($request['email_2'])){ $model->email_2 = $request['email_2']; }
+
+
         if(isset($request['banner_id'])){
             $model->banner_id = $request['banner_id'];
             if($model->banner_id == 'NOT') {$model->banner_id = null;}
