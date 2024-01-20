@@ -19,6 +19,19 @@
         <p>Ел. адреса (3) - {{$config->email_2 ?? ''}}</p>
         <p>Адреса - {{$config->address ?? ''}}</p>
 
+        <h1>Назва - {{$config->title ?? ''}}</h1>
+        <h3>Назва (1) - {{$config->title_1 ?? ''}}</h3>
+        <p>Текст - {{$config->text ?? ''}}</p>
+        <h3>Назва (2) - {{$config->title_2 ?? ''}}</h3>
+
+        <h4>Пункт (1) - {{$config->tit_1 ?? ''}}</h4>
+        <p>Текст (1) - {{$config->txt_1 ?? ''}}</p>
+        <h4>Пункт (2) - {{$config->tit_2 ?? ''}}</h4>
+        <p>Текст (2) - {{$config->txt_2 ?? ''}}</p>
+        <h4>Пункт (3) - {{$config->tit_3 ?? ''}}</h4>
+        <p>Текст (3) - {{$config->txt_3 ?? ''}}</p>
+        <h4>Пункт (4) - {{$config->tit_4 ?? ''}}</h4>
+        <p>Текст (4) - {{$config->txt_4 ?? ''}}</p>
 
 
 {{--        <form class="m-15" method="POST" action="{{route('admin.config.form')}}" enctype="multipart/form-data">--}}

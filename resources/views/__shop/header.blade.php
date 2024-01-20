@@ -99,22 +99,23 @@
                             </ul>
                         </li>
 
-                        <li><a href="about-us.html">ABOUT</a></li>
-                        <li class="expand"><a href="#">PAGES</a>
-                            <ul class="single sub-menu">
-                                <li><a href="about-us.html">About</a></li>
-                                <li><a href="shop.html">Shop</a></li>
-                                <li><a href="shoping-cart.html">Shop Cart</a></li>
-                                <li><a href="shop-list.html">Shop List</a></li>
-                                <li><a href="single-product.html">Single Product</a></li>
-                                <li><a href="wishlist.html">Wishlist</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
-                                <li><a href="account.html">Account</a></li>
-                                <li><a href="login.html">Log In</a></li>
-                                <li><a href="contact-us.html">Contact Us</a></li>
-                                <li><a href="404.html">404 Error</a></li>
-                            </ul>
-                        </li>
+
+                        <li><a href="{{route('about')}}">ПРО НАС</a></li>
+{{--                        <li class="expand"><a href="#">PAGES</a>--}}
+{{--                            <ul class="single sub-menu">--}}
+{{--                                <li><a href="about-us.html">About</a></li>--}}
+{{--                                <li><a href="shop.html">Shop</a></li>--}}
+{{--                                <li><a href="shoping-cart.html">Shop Cart</a></li>--}}
+{{--                                <li><a href="shop-list.html">Shop List</a></li>--}}
+{{--                                <li><a href="single-product.html">Single Product</a></li>--}}
+{{--                                <li><a href="wishlist.html">Wishlist</a></li>--}}
+{{--                                <li><a href="checkout.html">Checkout</a></li>--}}
+{{--                                <li><a href="account.html">Account</a></li>--}}
+{{--                                <li><a href="login.html">Log In</a></li>--}}
+{{--                                <li><a href="contact-us.html">Contact Us</a></li>--}}
+{{--                                <li><a href="404.html">404 Error</a></li>--}}
+{{--                            </ul>--}}
+{{--                        </li>--}}
                         <li><a href="{{route('contact')}}">КОНТАКТИ</a></li>
                     </ul>
                 </div>

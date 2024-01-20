@@ -1,6 +1,6 @@
 @extends('__shop.layout')
 
-@section('title', 'Головна сторінка')
+@section('title', 'Контакти')
 
 
 @section('content')
@@ -64,24 +64,25 @@
                 <h3>Залиште повідомлення нам</h3>
             </div>
             <div class="row">
-                <form action="mail.php" method="POST">
+                <form action="{{route('contact_form')}}" method="POST">
+                    @csrf
                     <div class="col-md-6">
                         <div class="contact-from-left">
                             <div class="input-text">
-                                <input type="text" placeholder="Your Name" name="name" id="name"/>
+                                <input type="text" placeholder="Ваше ім'я" name="name" id="name" required>
                             </div>
                             <div class="input-text">
-                                <input type="email" placeholder="Your Email" name="email" id="email"/>
+                                <input type="phone" placeholder="Ваш телефон" name="phone" id="phone" required>
                             </div>
                             <div class="input-text">
-                                <input type="text" placeholder="Your Subject" name="subject" id="subject"/>
+                                <input type="text" placeholder="Тема повідомлення" name="subject" id="subject"/>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="contact-from-right">
                             <div class="input-message">
-                                <textarea id="message" placeholder="Your Message" name="message"></textarea>
+                                <textarea id="message" placeholder="Ваше повідомлення" name="messages" required></textarea>
                                 <input type="submit" value="SEND" name="submitMessage" id="submitMessage"/>
                             </div>
                         </div>

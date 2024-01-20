@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', '\App\Http\Controllers\IndexController@index')->name('home');
 Route::get('/category/{id}', '\App\Http\Controllers\CategoriesController@index')->name('category');
 Route::get('/products/{product}', '\App\Http\Controllers\ProductsController@index')->name('product');
+Route::get('about', '\App\Http\Controllers\IndexController@about')->name('about');
 Route::get('contact', '\App\Http\Controllers\IndexController@contact')->name('contact');
+Route::post('contact_form', '\App\Http\Controllers\IndexController@contact_form')->name('contact_form');
 
 
 
@@ -35,6 +37,7 @@ Route::prefix('admin')->name('admin.')/*->middleware(['auth', 'admin'])*/->group
 //    Route::post('config/form', '\App\Http\Controllers\Admin\IndexController@form')->name('config.form');
 
     Route::resource('config', \App\Http\Controllers\Admin\ConfigController::class);
+    Route::resource('messages', \App\Http\Controllers\Admin\MessagesController::class);
     Route::resource('banners', \App\Http\Controllers\Admin\BannersController::class);
     Route::resource('main_banners', \App\Http\Controllers\Admin\MainBannerController::class);
     Route::resource('categories', \App\Http\Controllers\Admin\CategoriesController::class);

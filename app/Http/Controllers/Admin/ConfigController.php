@@ -54,6 +54,19 @@ class ConfigController extends Controller
         $config->email_1 = $data['email_1'] ?? '';
         $config->email_2 = $data['email_2'] ?? '';
         $config->address = $data['address'] ?? '';
+        $config->title = $data['title'] ?? '';
+        $config->title_1 = $data['title_1'] ?? '';
+        $config->title_2 = $data['title_2'] ?? '';
+        $config->text = $data['text'] ?? '';
+        $config->tit_1 = $data['tit_1'] ?? '';
+        $config->tit_2 = $data['tit_2'] ?? '';
+        $config->tit_3 = $data['tit_3'] ?? '';
+        $config->tit_4 = $data['tit_4'] ?? '';
+        $config->txt_1 = $data['txt_1'] ?? '';
+        $config->txt_2 = $data['txt_2'] ?? '';
+        $config->txt_3 = $data['txt_3'] ?? '';
+        $config->txt_4 = $data['txt_4'] ?? '';
+
 
         $config->save();
         return redirect()->route('admin.config.index');
