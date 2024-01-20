@@ -103,7 +103,7 @@
             <div class="row blog-area">
                 <div id="ourbrand-owl">
                     @foreach($productsAll as $product)
-                        <div class="col-md-12"><img src="{{asset($product->image)}}" alt="" /></div>
+                        <div class="col-md-12"><a href="{{route('product', $product)}}"><img src="{{asset($product->image)}}" alt="" /></a></div>
                     @endforeach
                 </div>
             </div>

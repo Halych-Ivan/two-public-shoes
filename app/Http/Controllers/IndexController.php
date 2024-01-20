@@ -34,8 +34,8 @@ class IndexController extends Controller
     public function contact()
     {
         $config = Config::find(1);
-        $productsAll = Product::all();
-//        dd($productsAll);
+        $productsAll = Product::select('id', 'title', 'image')->inRandomOrder()->get();
+
         return view('__shop.contact', compact('config', 'productsAll'));
     }
 
