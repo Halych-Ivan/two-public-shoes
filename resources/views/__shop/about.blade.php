@@ -31,7 +31,7 @@
                             <h3>{{ $config->title_1 ?? '' }}</h3>
                         </div>
                         <div class="welcome-left">
-                            <p>{{ $config->text ?? '' }}</p>
+                            <p>{!! $config->text ?? '' !!}</p>
                         </div>
                     </div>
                 </div>
