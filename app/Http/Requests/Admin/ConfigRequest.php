@@ -32,7 +32,7 @@ class ConfigRequest extends FormRequest
             'title' => 'nullable|string|max:255',
             'title_1' => 'nullable|string|max:255',
             'title_2' => 'nullable|string|max:255',
-            'text_1' => 'nullable|string',
+            'text' => 'nullable|string',
             'text_2' => 'nullable|string',
             'text_3' => 'nullable|string',
             'text_4' => 'nullable|string',
