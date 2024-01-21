@@ -33,6 +33,7 @@
         <h4>Пункт (4) - {{$config->tit_4 ?? ''}}</h4>
         <p>Текст (4) - {{$config->txt_4 ?? ''}}</p>
 
+        <img src="{{ asset($config->image ?? 'uploads/banners/570x480.jpg') }}" alt="" height="200">
 
 {{--        <form class="m-15" method="POST" action="{{route('admin.config.form')}}" enctype="multipart/form-data">--}}
 {{--            @csrf--}}

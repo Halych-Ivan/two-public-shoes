@@ -37,7 +37,7 @@
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <div class="welcome-right">
-                        <img src="img/other-pg/about-us.jpg" alt="" />
+                        <img src="{{ asset($config->image ?? 'uploads/banners/570x480.jpg') }}" alt="" />
                     </div>
                 </div>
             </div>

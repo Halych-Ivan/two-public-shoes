@@ -95,6 +95,25 @@
                 </div>
             </div>
 
+            <x-admin.input-file src="{{ old('image') }}" name="image" title="Виберіть картинку розміром  570х480"></x-admin.input-file>
+
+            <div class="mb-3">
+                <label for="image" class="form-label">Фото 570х480</label>
+                <input type="file" class="form-control" id="image" name="image" value="{{ old('image', $config->image) }}" placeholder="Фото 570х480">
+                @isset($config->image)
+                    <div class="m-3" title="Видалити даний запис">
+                        <img src="{{ asset($config->image) }}" alt="" height="150">
+                        <button type="submit" form="del" class="text-danger border">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                @endisset
+            </div>
+
+
+
+
+
 
 
 
@@ -113,5 +132,15 @@
 
     </div>
 
+
+
+    @isset($config->image)
+        <form id="del" class="inline" method="POST"
+              action="{{route('admin.config.image.destroy', $config->id)}}"
+              onsubmit="return confirm('Підтверджуєте видалення об\'єкту? {{$config->image}}')">
+            @method('DELETE')
+            @csrf
+        </form>
+    @endisset
 @endsection
 

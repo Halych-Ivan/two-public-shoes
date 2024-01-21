@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\ConfigRequest;
 use App\Models\Config;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class ConfigController extends Controller
 {
@@ -67,6 +68,11 @@ class ConfigController extends Controller
         $config->txt_3 = $data['txt_3'] ?? '';
         $config->txt_4 = $data['txt_4'] ?? '';
 
+        if(isset($data['image'])){
+            $folder = 'uploads/config';
+            $config->image = $folder.'/'.$this->saveFile($data['image'], $folder, $config->image);
+        }
+
 
         $config->save();
         return redirect()->route('admin.config.index');
@@ -75,6 +81,23 @@ class ConfigController extends Controller
 
     public function destroy(string $id)
     {
-        //
+
+    }
+
+    public function destroyImage(Config $config)
+    {
+        $fileForDelete = public_path($config->image);
+
+        //dd($fileForDelete);
+
+        if (File::exists($fileForDelete)) {
+            File::delete($fileForDelete);
+        }
+
+        $config->image = '';
+        $config->save();
+
+        return redirect()->route('admin.config.index')->with('alert', 'Дія виконана успішно!');
+
     }
 }

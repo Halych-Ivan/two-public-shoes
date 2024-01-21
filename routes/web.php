@@ -48,6 +48,8 @@ Route::prefix('admin')->name('admin.')/*->middleware(['auth', 'admin'])*/->group
         ->name('products.images_2.destroy');
     Route::delete('/products/{product}/images_pr/{image}', '\App\Http\Controllers\Admin\ProductsController@destroyImages')
         ->name('products.images_pr.destroy');
+    Route::delete('/config/{config}/image', '\App\Http\Controllers\Admin\ConfigController@destroyImage')
+        ->name('config.image.destroy');
 
 });
 //******************************************************************
