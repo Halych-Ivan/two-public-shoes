@@ -41,6 +41,8 @@
 {{--    </div>--}}
 {{--</section>--}}
 
+{{--{{ dd($data) }}--}}
+
 <div class="menu-area">
     <div class="container">
         <div class="row">
@@ -60,62 +62,49 @@
 {{--                                <li><a href="index-2.html">Home Version Two</a></li>--}}
 {{--                            </ul>--}}
 {{--                        </li>--}}
-                        <li><a href="#">WOMEN</a>
-                            <!-- Mega Menu Four Column -->
-                            <div class="mega-menu two-column">
-									<span>
-										<a href="#" class="mega-title">Categories 01</a>
-										<a href="shop.html">Washing machine 1</a>
-										<a href="shop.html">Washing machine 2</a>
-										<a href="shop.html">Washing machine 3</a>
-										<a href="shop.html">Washing machine 4</a>
-									</span>
-                                <span>
-										<a href="#" class="mega-title">Categories 02</a>
-										<a href="shop.html">Washing machine 1</a>
-										<a href="shop.html">Washing machine 2</a>
-										<a href="shop.html">Washing machine 3</a>
-										<a href="shop.html">Washing machine 4</a>
-									</span>
-                                <span>
-										<a href="#" class="mega-title">Categories 03</a>
-										<a href="shop.html">Washing machine 1</a>
-										<a href="shop.html">Washing machine 2</a>
-										<a href="shop.html">Washing machine 3</a>
-										<a href="shop.html">Washing machine 4</a>
-									</span>
-                                <span class="mega-menu-img">
-										<a href="#"><img alt="" src="img/other-pg/img_menu.jpg"></a>
-                                </span>
-                            </div>
-                        </li>
+{{--                        <li><a href="#">WOMEN</a>--}}
+{{--                            <!-- Mega Menu Four Column -->--}}
+{{--                            <div class="mega-menu two-column">--}}
+{{--									<span>--}}
+{{--										<a href="#" class="mega-title">Categories 01</a>--}}
+{{--										<a href="shop.html">Washing machine 1</a>--}}
+{{--										<a href="shop.html">Washing machine 2</a>--}}
+{{--										<a href="shop.html">Washing machine 3</a>--}}
+{{--										<a href="shop.html">Washing machine 4</a>--}}
+{{--									</span>--}}
+{{--                                <span>--}}
+{{--										<a href="#" class="mega-title">Categories 02</a>--}}
+{{--										<a href="shop.html">Washing machine 1</a>--}}
+{{--										<a href="shop.html">Washing machine 2</a>--}}
+{{--										<a href="shop.html">Washing machine 3</a>--}}
+{{--										<a href="shop.html">Washing machine 4</a>--}}
+{{--									</span>--}}
+{{--                                <span>--}}
+{{--										<a href="#" class="mega-title">Categories 03</a>--}}
+{{--										<a href="shop.html">Washing machine 1</a>--}}
+{{--										<a href="shop.html">Washing machine 2</a>--}}
+{{--										<a href="shop.html">Washing machine 3</a>--}}
+{{--										<a href="shop.html">Washing machine 4</a>--}}
+{{--									</span>--}}
+{{--                                <span class="mega-menu-img">--}}
+{{--										<a href="#"><img alt="" src="img/other-pg/img_menu.jpg"></a>--}}
+{{--                                </span>--}}
+{{--                            </div>--}}
+{{--                        </li>--}}
 
-                        <li class="expand">><a href="#">MEN</a>
+                        <li class="expand"><a href="#">КАТЕГОРІЇ</a>
                             <ul class="single sub-menu">
-                                <li><a href="about-us.html">About</a></li>
-                                <li><a href="shop.html">Shop</a></li>
-                                <li><a href="shop.html">Shop123</a></li>
-
+                                @if(isset($data['categories']))
+                                    @foreach($data['categories'] as $category)
+{{--                                        {{ dd($category) }}--}}
+                                <li><a href="{{ route('category', $category->id) }}">{{ $category->title }}</a></li>
+                                    @endforeach
+                                @endif
                             </ul>
                         </li>
 
 
                         <li><a href="{{route('about')}}">ПРО НАС</a></li>
-{{--                        <li class="expand"><a href="#">PAGES</a>--}}
-{{--                            <ul class="single sub-menu">--}}
-{{--                                <li><a href="about-us.html">About</a></li>--}}
-{{--                                <li><a href="shop.html">Shop</a></li>--}}
-{{--                                <li><a href="shoping-cart.html">Shop Cart</a></li>--}}
-{{--                                <li><a href="shop-list.html">Shop List</a></li>--}}
-{{--                                <li><a href="single-product.html">Single Product</a></li>--}}
-{{--                                <li><a href="wishlist.html">Wishlist</a></li>--}}
-{{--                                <li><a href="checkout.html">Checkout</a></li>--}}
-{{--                                <li><a href="account.html">Account</a></li>--}}
-{{--                                <li><a href="login.html">Log In</a></li>--}}
-{{--                                <li><a href="contact-us.html">Contact Us</a></li>--}}
-{{--                                <li><a href="404.html">404 Error</a></li>--}}
-{{--                            </ul>--}}
-{{--                        </li>--}}
                         <li><a href="{{route('contact')}}">КОНТАКТИ</a></li>
                     </ul>
                 </div>
@@ -129,32 +118,18 @@
                                 <div class="mobile-menu">
                                     <nav id="mobile-nav">
                                         <ul>
-                                            <li><a href="index.html">Home </a>
+                                            <li><a href="{{ route('home') }}">ГОЛОВНА</a></li>
+                                            <li class="expand"><a href="#">КАТЕГОРІЇ</a>
                                                 <ul>
-                                                    <li><a href="index.html">Home version one</a></li>
-                                                    <li><a href="index-2.html">Home Version two</a></li>
+                                                    @if(isset($data['categories']))
+                                                        @foreach($data['categories'] as $category)
+                                                            <li><a href="{{ route('category', $category->id) }}">{{ $category->title }}</a></li>
+                                                        @endforeach
+                                                    @endif
                                                 </ul>
                                             </li>
-                                            <li><a href="shop.html"> Shop </a></li>
-                                            <li><a href="about-us.html"> About Us </a></li>
-                                            <li><a href="#"> Pages </a>
-                                                <ul>
-                                                    <li><a href="about-us.html">About Us</a></li>
-                                                    <li><a href="shop.html">Shop</a></li>
-                                                    <li><a href="shop-list.html">Shop List</a></li>
-                                                    <li><a href="shoping-cart.html">Shop Cart</a></li>
-                                                    <li><a href="single-product.html">Single Product</a></li>
-                                                    <li><a href="checkout.html">Checkout</a></li>
-                                                    <li><a href="account.html">My Account</a></li>
-                                                    <li><a href="login.html">Login</a></li>
-                                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                                    <li><a href="contact-us.html">Contact</a></li>
-                                                    <li><a href="404.html">404 Error</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#"> Returns </a></li>
-                                            <li><a href="#"> Orders </a></li>
-                                            <li><a href="contact-us.html"> Contact Us </a></li>
+                                            <li><a href="{{route('about')}}">ПРО НАС</a></li>
+                                            <li><a href="{{route('contact')}}">КОНТАКТИ</a></li>
                                         </ul>
                                     </nav>
                                 </div>

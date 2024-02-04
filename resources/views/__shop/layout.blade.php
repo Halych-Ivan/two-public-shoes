@@ -42,11 +42,9 @@
     <script src="{{asset('js/vendor/modernizr-2.8.3.min.js')}}"></script>
 </head>
 <body>
-    @include('__shop.header')
 
-{{--    @if($config->slider)--}}
-{{--        @include('__shop.slider-area')--}}
-{{--    @endif--}}
+{{--    {{ $data }}--}}
+    @include('__shop.header')
 
     @yield('content')
 

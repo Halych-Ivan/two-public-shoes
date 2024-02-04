@@ -6,6 +6,7 @@
 @section('content')
     @php($direct=['', 't-lfl', 't-cn', 't-lfr'])
 
+{{--    {{ dd($data) }}--}}
 {{--    {{ dd( $products[1]->images[1]->image_path) }}--}}
 
 <!-- SLIDER AREA START -->
@@ -40,7 +41,6 @@
     <section class="banner-area">
         <div class="container">
             <div class="row">
-
                             <div class="col-md-3 col-sm-3 xs-res-mrbtm">
                                 <div class="banner-left">
                                     <a class="promo-link" href="{{route('category', $categories[0])}}">
@@ -108,7 +108,6 @@
                 </div>
                 <div class="newarrival-area">
                     <div id="newarrival-curosel" class="indicator-style">
-
                         @foreach($productsAll as $product)
                         <div class="col-md-12">
                             <div class="single-product">
@@ -160,6 +159,7 @@
         </div>
     </section>
     <!-- NEW ARRIVALS END -->
+
     <div class="mt-50">
         .
     </div>

@@ -22,14 +22,7 @@ class IndexController extends Controller
         $productsAll = Product::select('id', 'title', 'image')->inRandomOrder()->get();
 
 
-
-
-        $data = '';
-
-        return view('__shop.index', compact('products', 'categories', 'mainBanners', 'productsAll'));
-
-//        $config = Config::find(1);
-//        return view('__shop.layout', compact('config'));
+        return view('__shop.index', compact('products', 'categories', 'mainBanners', 'productsAll'))->with(['data' => $this->data]);
     }
 
 
@@ -38,7 +31,7 @@ class IndexController extends Controller
         $config = Config::find(1);
         $productsAll = Product::select('id', 'title', 'image')->inRandomOrder()->get();
 
-        return view('__shop.about', compact('config', 'productsAll'));
+        return view('__shop.about', compact('config', 'productsAll'))->with(['data' => $this->data]);
     }
 
 
@@ -47,7 +40,7 @@ class IndexController extends Controller
         $config = Config::find(1);
         $productsAll = Product::select('id', 'title', 'image')->inRandomOrder()->get();
 
-        return view('__shop.contact', compact('config', 'productsAll'));
+        return view('__shop.contact', compact('config', 'productsAll'))->with(['data' => $this->data]);
     }
 
     public function contact_form(ContactFormRequest $request, Message $message)
@@ -62,7 +55,7 @@ class IndexController extends Controller
 //        dd($message);
 
         $message->save();
-        return redirect()->back();
+        return redirect()->back()->with(['data' => $this->data]);
     }
 
 

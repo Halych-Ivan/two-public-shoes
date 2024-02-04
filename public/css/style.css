@@ -623,7 +623,7 @@ a.promo-link:hover h1{opacity:1;transform: scale3d(1, 1, 1);}
   position: relative;
 }
 .section-titel::after {
-  background: rgba(0, 0, 0, 0) url("img/home-1/sec-titel.png") no-repeat scroll 0 0;
+  background: rgba(0, 0, 0, 0) url("./img/home-1/sec-titel.png") no-repeat scroll 0 0;
   content: "";
   height: 100%;
   left: 39%;
@@ -816,7 +816,7 @@ ul.pro-rating li, .pro-review ul li, .social-icon ul li {
   text-align: right;
 }
 .indicator-style.owl-theme .owl-controls .owl-buttons div, .our-brand-area .owl-theme .owl-controls .owl-buttons div {
-  background: rgba(0, 0, 0, 0) url("img/home-1/featured-arrow-left.png") no-repeat scroll 0 0;
+  background: rgba(0, 0, 0, 0) url("./img/home-1/featured-arrow-left.png") no-repeat scroll 0 0;
   border-radius: 0;
   color: #fff;
   display: inline-block;
@@ -825,7 +825,7 @@ ul.pro-rating li, .pro-review ul li, .social-icon ul li {
   padding: 1px 14px;
 }
 .indicator-style.owl-theme .owl-controls .owl-buttons div.owl-next, .our-brand-area .owl-theme .owl-controls .owl-buttons div {
-  background: rgba(0, 0, 0, 0) url("img/home-1/featured-arrow-right.png") no-repeat scroll 0 0;
+  background: rgba(0, 0, 0, 0) url("./img/home-1/featured-arrow-right.png") no-repeat scroll 0 0;
 }
 .indicator-style.owl-theme .owl-controls.clickable .owl-buttons div:hover {
   opacity: 0.5;
@@ -846,7 +846,7 @@ ul.pro-rating li, .pro-review ul li, .social-icon ul li {
 /*------------ 6. Hot Deals Area --------------*/
 .hot-deals-area {
   background-attachment: scroll;
-  background-image: url("img/home-1/hot-deals.jpg");
+  background-image: url("./img/home-1/hot-deals.jpg");
   background-position: center center;
   background-size: cover;
 }

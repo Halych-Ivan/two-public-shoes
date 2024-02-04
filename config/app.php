@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 return [
 
     'phone' => '+380978503682',
+    'categories' => '',
 
     /*
     |--------------------------------------------------------------------------
