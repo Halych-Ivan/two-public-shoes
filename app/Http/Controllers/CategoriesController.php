@@ -15,7 +15,7 @@ class CategoriesController extends Controller
 
 //        dd($category);
 
-        return view('__shop.categories.index', compact('category', 'categories'));
+        return view('__shop.categories.index', compact('category', 'categories'))->with(['data' => $this->data]);
     }
 
 }

@@ -14,7 +14,7 @@ class ProductsController extends Controller
 
 
 
-        return view('__shop.products.index', compact('product'));
+        return view('__shop.products.index', compact('product'))->with(['data' => $this->data]);
     }
 
 }
