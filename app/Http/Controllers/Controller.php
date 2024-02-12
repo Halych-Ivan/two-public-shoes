@@ -71,6 +71,7 @@ class Controller extends BaseController
             if($model->category_id == 'NOT') {$model->category_id = null;}
         }
 
+        if(isset($request['logo'])){$model->logo = $folder.'/'.$this->saveFile($request['logo'], $folder, $model->logo);}
         if(isset($request['image'])){$model->image = $folder.'/'.$this->saveFile($request['image'], $folder, $model->image);}
         if(isset($request['image_2'])){$model->image_2 = $folder.'/'.$this->saveFile($request['image_2'], $folder, $model->image_2);}
         if(isset($request['image_v'])){$model->image_v = $folder.'/'.$this->saveFile($request['image_v'], $folder, $model->image_v);}

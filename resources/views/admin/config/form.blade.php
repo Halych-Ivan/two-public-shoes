@@ -95,38 +95,20 @@
                 </div>
             </div>
 
+            <img src="{{asset($config->image)}}" alt="" height="200">
             <x-admin.input-file src="{{ old('image') }}" name="image" title="Виберіть картинку розміром  570х480"></x-admin.input-file>
-
-            <div class="mb-3">
-                <label for="image" class="form-label">Фото 570х480</label>
-                <input type="file" class="form-control" id="image" name="image" value="{{ old('image', $config->image) }}" placeholder="Фото 570х480">
-                @isset($config->image)
-                    <div class="m-3" title="Видалити даний запис">
-                        <img src="{{ asset($config->image) }}" alt="" height="150">
-                        <button type="submit" form="del" class="text-danger border">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </div>
-                @endisset
-            </div>
-
-
-
-
 
 
 
 
             <div class="m-10 text-center" style="background: grey">
-                <img src="{{asset('img/home-1/logo.png')}}" alt="">
+                <img src="{{asset($config->logo)}}" alt="">
             </div>
             <br>
 
+            <x-admin.input-file src="{{ old('logo') }}" name="logo" title="Виберіть Logo"></x-admin.input-file>
 
-            <div class="mb-3">
-                <label for="formFile" class="form-label">Оберіть файл</label>
-                <input class="form-control" type="file" id="formFile" name="logo">
-            </div>
+
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
@@ -142,5 +124,9 @@
             @csrf
         </form>
     @endisset
+
+
+
+
 @endsection
 

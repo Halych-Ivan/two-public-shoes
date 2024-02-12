@@ -36,7 +36,7 @@
             </div>
             <div class="col-md-3 col-sm-4 col-xs-12">
                 <div class="address-area">
-                    <a href="index.html"><img src="images/logo.png" alt=""></a>
+                    <a href="{{ route('home') }}"><img src="{{ asset($data['config']->logo) }}" alt=""></a>
 {{--                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>--}}
                     <div class="contact-details">
                         <ul>

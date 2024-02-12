@@ -48,7 +48,7 @@
         <div class="row">
             <div class="col-md-2 col-sm-2">
                 <div class="logo-area">
-                    <a href="{{ route('home') }}"><img src="images/logo.png" alt="" height="40"></a>
+                    <a href="{{ route('home') }}"><img src="{{ asset($data['config']->logo ?? '') }}" alt="" height="40"></a>
                 </div>
             </div>
             <div class="col-md-8 col-sm-8">

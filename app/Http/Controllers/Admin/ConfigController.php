@@ -73,6 +73,11 @@ class ConfigController extends Controller
             $config->image = $folder.'/'.$this->saveFile($data['image'], $folder, $config->image);
         }
 
+        if(isset($data['logo'])){
+            $folder = 'uploads/config';
+            $config->logo = $folder.'/'.$this->saveFile($data['logo'], $folder, $config->logo);
+        }
+
 
         $config->save();
         return redirect()->route('admin.config.index');
