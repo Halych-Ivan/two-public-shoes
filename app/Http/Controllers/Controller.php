@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Config;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
@@ -20,6 +21,7 @@ class Controller extends BaseController
     public function __construct()
     {
         $this->data['categories'] = Category::query()->select('id', 'title')->get();
+        $this->data['config'] = Config::find(1);
     }
 
 

@@ -59,7 +59,7 @@
 
 
 
-{{--    @include('__shop.footer')--}}
+    @include('__shop.footer')
 
 <!-- all js here -->
 <!-- jquery latest version -->
