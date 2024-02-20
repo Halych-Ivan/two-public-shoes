@@ -103,12 +103,12 @@
                             </ul>
                         </li>
 
-
                         <li><a href="{{route('about')}}">ПРО НАС</a></li>
                         <li><a href="{{route('contact')}}">КОНТАКТИ</a></li>
                     </ul>
                 </div>
             </div>
+
             <!-- MOBILE-MENU-AREA START -->
             <div class="mobile-menu-area">
                 <div class="container">
@@ -138,6 +138,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- MOBILE-MENU-AREA END  -->
             <div class="col-md-2 col-sm-2">
                 <div class="menu-right-area">
@@ -154,50 +155,49 @@
                                 </form>
                             </div>
                         </li>
+
                         <li>
                             <a href="#" class="cart-toggler mini-cart-icon">
                                 <i class="fa fa-shopping-cart"></i>
-                                <span>2</span>
+                                @if(session()->has('cart') && count(session('cart')) > 0)
+                                    <span>{{ count(session('cart')) }}</span>
+                                @endif
                             </a>
-                            <div class="top-cart-content">
-                                <div class="media header-middle-checkout">
-                                    <div class="media-left check-img">
-                                        <a href="#">
-                                            <img alt="" src="img/other-pg/cart-1.jpg">
+
+                            @if(session()->has('cart') && count(session('cart')) > 0)
+                                <div class="top-cart-content">
+
+                                    @foreach(session('cart') as $cart)
+
+                                        <div class="media header-middle-checkout">
+                                            <div class="media-left check-img">
+                                                <a href="{{ route('product', $cart['id']) }}">
+                                                    <img alt="" src="{{ asset($cart['image']) }}" height="100">
+                                                </a>
+                                            </div>
+                                            <div class="media-body checkout-content">
+                                                <h4 class="media-heading">
+                                                    <a href="{{ route('product', $cart['id']) }}">{{ $cart['title'] }}</a>
+                                                    <a href="{{ route('cart.remove', $cart['id']) }}"><span title="Remove This Item" class="btn-remove checkout-remove">
+                                                        <i class="fa fa-trash"></i></a>
+                                                    </span>
+                                                </h4>
+                                                <p>{{ $cart['price'] }}</p>
+                                            </div>
+                                        </div>
+
+                                    @endforeach
+
+                                    <div class="actions">
+                                        <a href="{{ route('cart.index') }}">
+                                            <button type="button" title="Checkout-botton" class="Checkout-botton">
+                                                <span>Checkout</span>
+                                            </button>
                                         </a>
                                     </div>
-                                    <div class="media-body checkout-content">
-                                        <h4 class="media-heading">
-                                            <a href="#">Men Pumping Show</a>
-                                            <span title="Remove This Item" class="btn-remove checkout-remove">
-														<i class="fa fa-trash"></i>
-													</span>
-                                        </h4>
-                                        <p>1 x $111.00</p>
-                                    </div>
                                 </div>
-                                <div class="media header-middle-checkout last-child"><!-- Cart Middle Check Out -->
-                                    <div class="media-left check-img">
-                                        <a href="#">
-                                            <img alt="" src="img/other-pg/cart-2.jpg">
-                                        </a>
-                                    </div>
-                                    <div class="media-body checkout-content">
-                                        <h4 class="media-heading">
-                                            <a href="#">Women Pump Show</a>
-                                            <span title="Remove This Item" class="btn-remove checkout-remove">
-														<i class="fa fa-trash"></i>
-													</span>
-                                        </h4>
-                                        <p>1 x $111.00</p>
-                                    </div>
-                                </div>
-                                <div class="actions">
-                                    <button type="button" title="Checkout-botton" class="Checkout-botton">
-                                        <span>Checkout</span>
-                                    </button>
-                                </div>
-                            </div>
+                            @endif
+
                         </li>
                     </ul>
                 </div>

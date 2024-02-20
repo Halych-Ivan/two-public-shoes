@@ -20,6 +20,11 @@ Route::get('about', '\App\Http\Controllers\IndexController@about')->name('about'
 Route::get('contact', '\App\Http\Controllers\IndexController@contact')->name('contact');
 Route::post('contact_form', '\App\Http\Controllers\IndexController@contact_form')->name('contact_form');
 
+// Корзина
+Route::get('/cart', '\App\Http\Controllers\CartController@index')->name('cart.index');
+Route::post('/cart/add/{productId}', '\App\Http\Controllers\CartController@add')->name('cart.add');
+Route::get('/cart/update', '\App\Http\Controllers\CartController@update')->name('cart.update');
+Route::get('/cart/remove/{id}', '\App\Http\Controllers\CartController@remove')->name('cart.remove');
 
 
 

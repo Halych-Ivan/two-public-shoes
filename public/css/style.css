@@ -3573,7 +3573,7 @@ p.alert {
   background: #e8e8e9 none repeat scroll 0 0;
   border: medium none;
   color: #000;
-  float: left;
+  /*float: left;*/
   font-size: 17px;
   height: 40px;
   line-height: 40px;

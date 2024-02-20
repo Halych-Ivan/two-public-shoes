@@ -196,7 +196,7 @@
 {{--                                                    <span class="sale-text">Sale</span>--}}
 {{--                                                </span>--}}
                                                 <div class="product-action">
-                                                    <h4><a href="#">{{$product->title}}</a></h4>
+                                                    <h4><a href="{{ route('product', $product) }}">{{$product->title}}</a></h4>
                                                     @isset($product->rating)
                                                     <ul class="pro-rating">
                                                         @for($i = 0; $i < $product->rating; $i++)
@@ -223,11 +223,15 @@
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a class="test all_src_icon" href="#" title=""
-                                                               data-toggle="tooltip" data-placement="top"
-                                                               data-original-title="Compare">
-                                                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                                            </a>
+                                                            <form action="{{ route('cart.add', $product->id) }}" method="POST">
+                                                                @csrf
+                                                                    <input hidden type="number" name="size" value="41" min="36" max="45"/>
+                                                                    <button type="submit" style="background-color: transparent; border: none;">
+                                                                           <a data-toggle="tooltip" data-placement="top"
+                                                                           data-original-title="Додати в корзину">
+                                                                               <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                                                                    </button>
+                                                            </form>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -250,7 +254,7 @@
                                                     </div>
                                                     <div class="shop-list-right">
                                                         <div class="product-content">
-                                                            <h2><a href="#">{{$product->title}}</a></h2>
+                                                            <h2><a href="{{ route('product', $product) }}">{{$product->title}}</a></h2>
                                                             <p><b>{{$product->price}}</b></p>
                                                             <div class="rating">
                                                                 @isset($product->rating)

@@ -57,19 +57,23 @@
                         <div class="stock-status">
                             <label>Категорія</label>: <strong> <a href="{{route('category', $product->category->id)}}">{{$product->category->title}}</a></strong>
                         </div>
-                        <form action="#">
+
+                        <form action="{{ route('cart.add', $product->id) }}" method="POST">
+                            @csrf
                             <div class="quantity">
-                                <input type="number" value="1" />
-                                <button type="submit">Add to cart</button>
+                                <label for="product-quantity-{{ $product->id }}">Розмір: </label>
+                                <input type="number" id="product-quantity-{{ $product->id }}" name="size" value="41" min="36" max="45"/>
+                                <!-- Використання title для кнопки -->
+                                <button type="submit" title="Натисніть, щоб додати товар у корзину">Додати в корзину</button>
                             </div>
                         </form>
-                        <div class="add-to-wishlist">
+{{--                        <div class="add-to-wishlist">--}}
 {{--                            <a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-star"></i></a>--}}
 {{--                            <a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>--}}
-                        </div>
-                        <div class="share_buttons">
-                            <a href="#"><img src="img/share-img.png" alt="" /></a>
-                        </div>
+{{--                        </div>--}}
+{{--                        <div class="share_buttons">--}}
+{{--                            <a href="#"><img src="img/share-img.png" alt="" /></a>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>
