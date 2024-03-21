@@ -25,6 +25,7 @@ Route::get('/cart', '\App\Http\Controllers\CartController@index')->name('cart.in
 Route::post('/cart/add/{productId}', '\App\Http\Controllers\CartController@add')->name('cart.add');
 Route::get('/cart/update', '\App\Http\Controllers\CartController@update')->name('cart.update');
 Route::get('/cart/remove/{id}', '\App\Http\Controllers\CartController@remove')->name('cart.remove');
+Route::post('/cart/order', '\App\Http\Controllers\CartController@order')->name('cart.order');
 
 
 
@@ -43,6 +44,7 @@ Route::prefix('admin')->name('admin.')/*->middleware(['auth', 'admin'])*/->group
 
     Route::resource('config', \App\Http\Controllers\Admin\ConfigController::class);
     Route::resource('messages', \App\Http\Controllers\Admin\MessagesController::class);
+    Route::resource('orders', \App\Http\Controllers\Admin\OrdersController::class);
     Route::resource('banners', \App\Http\Controllers\Admin\BannersController::class);
     Route::resource('main_banners', \App\Http\Controllers\Admin\MainBannerController::class);
     Route::resource('categories', \App\Http\Controllers\Admin\CategoriesController::class);

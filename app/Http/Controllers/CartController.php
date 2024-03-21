@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\OrdersRequest;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -51,7 +53,37 @@ class CartController extends Controller
     // Метод для оновлення товару в корзині
     public function update()
     {
-        dd('тут буде продовження');
+
+    }
+
+
+    public function order(OrdersRequest $request)
+    {
+        $data = $request->validated();
+        $cart = session()->get('cart', []);
+
+        if($cart){
+            foreach ($cart as  $item){
+                $order = new Order();
+                $order->client = $data['title'];
+                $order->telephone = $data['telephone'];
+                $order->address = $data['address'];
+
+                $order->title = $item['title'];
+                $order->size = $item['size'];
+                $order->price = $item['price'];
+
+                $order->active = '1';
+
+                $order->save();
+
+            }
+            session()->forget('cart');
+
+            return redirect()->route('home');
+        }
+
+        return redirect()->back();
     }
 
 

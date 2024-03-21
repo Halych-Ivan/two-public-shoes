@@ -53,14 +53,46 @@
                             @endisset
                             </tbody>
                         </table>
+
+                        <form class="m-15" action="{{ route('cart.order') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+
+                            <div class="mb-3">
+                                <label for="title" class="form-label">Прізвище Ім'я та По батькові</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="title"
+                                       name="title"
+                                       value="{{ old('title') }}"
+                                       placeholder="ПІБ" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="title" class="form-label">Номер телефону</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="telephone"
+                                       name="telephone"
+                                       value="{{ old('telephone') }}"
+                                       placeholder="телефон" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="title" class="form-label">Вкажіть дані для відправки замовлення (міто, відділення нової пошти або укрпошти)</label>
+                                <input type="text"
+                                       class="form-control"
+                                       id="address"
+                                       name="address"
+                                       value="{{ old('address') }}"
+                                       placeholder="адреса" required>
+                            </div>
+
+                            <button type="submit" class="">Зробити замовлення</button>
+
+                        </form>
+
                     </div>
-                    <div class="shopingcart-bottom-area">
-                        <a href="{{ url()->previous() }}" class="bottoma">Продовжити покупки</a>
-                        <div class="bottom-button">
-{{--                            <a href="#" class="bottomb">CLEAR SHOPPING CART</a>--}}
-                            <a href="{{ route('cart.update') }}" class="bottomb">Зробити замовлення</a>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
