@@ -197,13 +197,13 @@
 {{--                                                </span>--}}
                                                 <div class="product-action">
                                                     <h4><a href="{{ route('product', $product) }}">{{$product->title}}</a></h4>
-                                                    @isset($product->rating)
-                                                    <ul class="pro-rating">
-                                                        @for($i = 0; $i < $product->rating; $i++)
-                                                            <li class="pro-ratcolor"><i class="fa fa-star"></i></li>
-                                                        @endfor
-                                                    </ul>
-                                                    @endisset
+{{--                                                    @isset($product->rating)--}}
+{{--                                                    <ul class="pro-rating">--}}
+{{--                                                        @for($i = 0; $i < $product->rating; $i++)--}}
+{{--                                                            <li class="pro-ratcolor"><i class="fa fa-star"></i></li>--}}
+{{--                                                        @endfor--}}
+{{--                                                    </ul>--}}
+{{--                                                    @endisset--}}
                                                     <span class="price">{{$product->price}}</span>
                                                 </div>
                                                 <div class="pro-action">

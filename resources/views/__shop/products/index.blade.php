@@ -46,11 +46,11 @@
                             <span class="new-price">{{$product->price}}</span>
 {{--                            <span class="old-price">£190.00</span>--}}
                         </div>
-                        <div class="pro-rating">
-                            @for($i = 0; $i < $product->rating; $i++)
-                                <a href="#"><i class="fa fa-star"></i></a>
-                            @endfor
-                        </div>
+{{--                        <div class="pro-rating">--}}
+{{--                            @for($i = 0; $i < $product->rating; $i++)--}}
+{{--                                <a href="#"><i class="fa fa-star"></i></a>--}}
+{{--                            @endfor--}}
+{{--                        </div>--}}
                         <div class="short-description">
                             <p>{{$product->description}}</p>
                         </div>

@@ -37,7 +37,7 @@ Route::get('/admin/img', '\App\Http\Controllers\Admin\IndexController@img')->nam
 //************************************************************
 // Admin panel
 //************************************************************
-Route::prefix('admin')->name('admin.')/*->middleware(['auth', 'admin'])*/->group(function (){
+Route::prefix('admindvasvgadvasdvasvasdvasdvasdv')->name('admin.')/*->middleware(['auth', 'admin'])*/->group(function (){
 
 //    Route::get('config', '\App\Http\Controllers\Admin\IndexController@index')->name('config');
 //    Route::post('config/form', '\App\Http\Controllers\Admin\IndexController@form')->name('config.form');

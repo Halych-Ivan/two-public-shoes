@@ -78,7 +78,7 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="title" class="form-label">Вкажіть дані для відправки замовлення (міто, відділення нової пошти або укрпошти)</label>
+                                <label for="title" class="form-label">Вкажіть дані для відправки замовлення (місто, відділення нової пошти або укрпошти)</label>
                                 <input type="text"
                                        class="form-control"
                                        id="address"
