@@ -54,7 +54,7 @@
             <div class="col-md-8 col-sm-8">
                 <div class="main-menu">
                     <ul class="list-inline">
-                        <li><a href="{{ route('home') }}">ГОЛОВНА</a></li>
+                        <li><a href="{{ route('home') }}">ГОЛОВНА.</a></li>
 {{--                        <li class="expand active"><a href="index.html">HOME</a>--}}
 {{--                            <ul class="single sub-menu">--}}
 {{--                                <li class="sub-menu-title"><a href="index.html">Home Pages</a></li>--}}
